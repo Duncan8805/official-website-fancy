@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智傑資訊 HighTech — 數位與實體，一致的品牌美學</title>
+  <meta name="description" content="官網建置、ERP 系統開發、UI/UX 設計、品牌視覺統籌（CIS/VI 延伸）。打造線上與線下完美一致的品牌體驗。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Noto+Serif+TC:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════ PRELOADER ══════════ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__brand">
+        <span class="preloader__zh">智傑資訊</span>
+        <span class="preloader__en">HIGHTECH STUDIO</span>
+      </div>
+      <div class="preloader__counter"><span id="loadCount">0</span><i>%</i></div>
+      <div class="preloader__bar"><span id="loadBar"></span></div>
+    </div>
+  </div>
+
+  <!-- noise texture overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- custom cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__logo" data-hover>
+      <span class="nav__logo-mark">智</span>
+      <span class="nav__logo-text">智傑資訊 <em>HighTech</em></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#services" data-hover>服務項目</a>
+      <a href="#identity" data-hover>品牌統籌</a>
+      <a href="#studio" data-hover>工作室</a>
+      <a href="#process" data-hover>合作流程</a>
+      <a href="#contact" class="nav__cta" data-hover><span>免費諮詢</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+      <div class="hero__bg">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__grid"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow anim-line"><span>DIGITAL BRAND STUDIO — TAIWAN</span></p>
+        <h1 class="hero__title">
+          <span class="hero__row"><span class="hero__word" data-split>官網</span><span class="hero__word hero__word--serif" data-split>・</span><span class="hero__word" data-split>系統</span></span>
+          <span class="hero__row"><em class="hero__row-en" data-split>Web&nbsp;/&nbsp;ERP&nbsp;/&nbsp;Identity</em></span>
+          <span class="hero__row"><span class="hero__word hero__word--accent" data-split>品牌識別設計</span></span>
+        </h1>
+        <div class="hero__sub anim-line">
+          <span>數位與實體，一致的品牌美學——從官網到名片，每個細節說同一種語言。</span>
+        </div>
+        <div class="hero__chips anim-line">
+          <span>
+            <a href="#svc-web" class="chip" data-hover>官網建置</a>
+            <a href="#svc-erp" class="chip" data-hover>ERP 系統</a>
+            <a href="#svc-ui" class="chip" data-hover>UI/UX 設計</a>
+            <a href="#svc-vi" class="chip" data-hover>品牌識別 CIS/VI</a>
+          </span>
+        </div>
+        <div class="hero__actions anim-line">
+          <a href="#contact" class="btn btn--solid" data-hover><span>免費諮詢</span></a>
+        </div>
+      </div>
+
+      <div class="hero__scroll anim-line">
+        <span>SCROLL</span>
+        <i></i>
+      </div>
+    </section>
+
+    <!-- ══════════ SERVICES ══════════ -->
+    <section class="services" id="services">
+      <div class="section-head">
+        <p class="section-head__label">SERVICES</p>
+        <h2 class="section-head__title">四項核心服務<em>What we do</em></h2>
+      </div>
+
+      <div class="services__list">
+        <article class="service" id="svc-web" data-hover-lg>
+          <span class="service__no">01</span>
+          <div class="service__main">
+            <h3 class="service__title">官網建置<em>Web Design</em></h3>
+            <p class="service__desc">做一個幫你接單的官網。手機、電腦都好看，客戶搜得到、看得懂、聯絡得到你。</p>
+            <ul class="service__tags"><li>品牌官網</li><li>RWD</li><li>互動動效</li><li>SEO</li></ul>
+          </div>
+          <a class="service__visual service__visual--1 service__visual--live" href="https://duncan8805.github.io/chang-fu-rice/" target="_blank" rel="noopener" data-hover aria-label="查看實際案例：長富稻穀乾燥中心">
+            <img src="assets/case-chang-fu-rice.jpg" alt="長富稻穀乾燥中心官網截圖" loading="lazy" />
+            <span class="service__visual-caption">實際案例：長富稻穀乾燥中心 <i>&nearr;</i></span>
+          </a>
+        </article>
+
+        <article class="service" id="svc-erp" data-hover-lg>
+          <span class="service__no">02</span>
+          <div class="service__main">
+            <h3 class="service__title">系統建置<em>ERP System</em></h3>
+            <p class="service__desc">庫存、訂單、財務、人資管進同一套系統。重複的工作交給電腦，數字一目了然。</p>
+            <ul class="service__tags"><li>ERP</li><li>流程自動化</li><li>客製模組</li><li>資料整合</li></ul>
+          </div>
+          <div class="service__visual service__visual--2 service__visual--live">
+            <img src="assets/case-chang-fu-erp.jpg" alt="長富稻穀廠過磅結算系統畫面" loading="lazy" />
+            <span class="service__visual-caption">實際案例：長富稻穀廠 過磅結算系統</span>
+          </div>
+        </article>
+
+        <article class="service" id="svc-ui" data-hover-lg>
+          <span class="service__no">03</span>
+          <div class="service__main">
+            <h3 class="service__title">UI/UX 設計<em>Experience Design</em></h3>
+            <p class="service__desc">介面好不好用，直接決定客戶留不留。我們用研究與原型驗證，讓每個畫面都直覺。</p>
+            <ul class="service__tags"><li>使用者研究</li><li>Wireframe</li><li>Prototype</li><li>設計系統</li></ul>
+          </div>
+          <div class="service__visual service__visual--3"></div>
+        </article>
+
+        <article class="service service--featured" id="svc-vi" data-hover-lg>
+          <span class="service__no">04</span>
+          <div class="service__main">
+            <h3 class="service__title">品牌視覺統籌<em>CIS / VI Identity</em></h3>
+            <p class="service__desc">讓官網、名片、招牌看起來是同一家公司。專職設計師統整你的視覺，線上線下一次到位。</p>
+            <ul class="service__tags"><li>CIS / VI</li><li>標誌優化</li><li>名片・周邊</li><li>識別規範</li></ul>
+          </div>
+          <div class="service__visual service__visual--4"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════ MANIFESTO ══════════ -->
+    <section class="manifesto">
+      <p class="manifesto__label">OUR BELIEF</p>
+      <p class="manifesto__text" id="manifestoText">
+        一個品牌的專業感， 藏在每一次接觸的細節裡—— 螢幕上、名片上， 都是同一個你。
+      </p>
+    </section>
+
+    <!-- ══════════ IDENTITY (VI 延伸敘事) ══════════ -->
+    <section class="identity" id="identity">
+      <div class="identity__pin" id="identityPin">
+        <div class="identity__head">
+          <p class="section-head__label section-head__label--light">BRAND CONSISTENCY</p>
+          <h2 class="identity__title">線上 <span>&times;</span> 線下<br/>完美一致的品牌體驗</h2>
+          <p class="identity__sub">在團隊提供網頁設計的同時，將品牌美感同步轉化為實體視覺。<br/>為你解決多方溝通的繁瑣，一站式確保全方位的品牌形象一致。</p>
+        </div>
+        <div class="identity__track" id="identityTrack">
+          <div class="id-card">
+            <span class="id-card__no">A</span>
+            <h3>數位介面<em>UI / UX</em></h3>
+            <p>網站、系統後台、App——品牌色彩、字體與元件在每個畫面中精準延伸。</p>
+          </div>
+          <div class="id-card">
+            <span class="id-card__no">B</span>
+            <h3>標誌精煉<em>Logo Refinement</em></h3>
+            <p>梳理既有視覺資產，美感優化與細節精煉，讓標誌在任何尺寸下都經得起檢視。</p>
+          </div>
+          <div class="id-card">
+            <span class="id-card__no">C</span>
+            <h3>實體識別<em>Physical VI</em></h3>
+            <p>名片、信封、簡報模板、招牌——頂級數位介面之外，不漏掉任何實體細節。</p>
+          </div>
+          <div class="id-card">
+            <span class="id-card__no">D</span>
+            <h3>規範手冊<em>Guidelines</em></h3>
+            <p>數位與實體形象周邊規範，一本手冊讓內部團隊與外部廠商都不再走鐘。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ STATS ══════════ -->
+    <section class="stats">
+      <div class="stat"><strong data-count="10">0</strong><span>年以上核心成員經驗</span></div>
+      <div class="stat"><strong data-count="4">0</strong><span>項一站式整合服務</span></div>
+      <div class="stat"><strong data-count="100">0</strong><span>％ 線上線下視覺一致</span></div>
+      <div class="stat"><strong data-count="1">0</strong><span>個窗口，全程對接</span></div>
+    </section>
+
+    <!-- ══════════ STUDIO ══════════ -->
+    <section class="studio" id="studio">
+      <div class="section-head">
+        <p class="section-head__label">STUDIO</p>
+        <h2 class="section-head__title">認識工作室<em>Who we are</em></h2>
+      </div>
+      <div class="studio__grid">
+        <div class="studio__statement">
+          <p class="studio__lead">我們是一支精實的數位團隊——<br/>小到每個決策都有人負責，<br/>大到足以撐起你的整個品牌。</p>
+          <p class="studio__body">核心成員各自深耕產業十年以上，從業務策略、系統工程到介面設計，並與視覺統籌設計師深度協作。你不需要在網頁公司、系統廠商與設計工作室之間來回傳話——面對我們，永遠只有一個窗口。</p>
+        </div>
+        <div class="studio__disciplines">
+          <div class="disc" data-hover-lg>
+            <span class="disc__no">01</span>
+            <div>
+              <h3>策略與顧問<em>Strategy</em></h3>
+              <p>理解你的商業模式，把預算花在真正能帶來成長的地方。</p>
+            </div>
+          </div>
+          <div class="disc" data-hover-lg>
+            <span class="disc__no">02</span>
+            <div>
+              <h3>全端工程<em>Engineering</em></h3>
+              <p>從官網前端到 ERP 後台，穩定、安全、跟得上業務規模的程式碼。</p>
+            </div>
+          </div>
+          <div class="disc" data-hover-lg>
+            <span class="disc__no">03</span>
+            <div>
+              <h3>UI/UX 設計<em>Experience</em></h3>
+              <p>以使用者研究為根據的介面設計，好看，而且真的好用。</p>
+            </div>
+          </div>
+          <div class="disc" data-hover-lg>
+            <span class="disc__no">04</span>
+            <div>
+              <h3>視覺統籌<em>Visual Identity</em></h3>
+              <p>專職視覺統籌設計師坐鎮，數位介面與實體識別出自同一雙眼睛。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ PROCESS ══════════ -->
+    <section class="process" id="process">
+      <div class="section-head">
+        <p class="section-head__label">PROCESS</p>
+        <h2 class="section-head__title">合作流程<em>How we work</em></h2>
+      </div>
+      <ol class="process__list">
+        <li class="step" data-hover-lg>
+          <span class="step__no">01</span>
+          <h3>需求訪談</h3>
+          <p>免費諮詢。理解你的產業、目標與既有品牌資產，定義專案範圍。</p>
+        </li>
+        <li class="step" data-hover-lg>
+          <span class="step__no">02</span>
+          <h3>策略與設計</h3>
+          <p>視覺統籌設計師與 UI/UX 團隊同步作業，數位與實體識別一次到位。</p>
+        </li>
+        <li class="step" data-hover-lg>
+          <span class="step__no">03</span>
+          <h3>開發與整合</h3>
+          <p>官網、系統開發與品牌規範落地，每個環節皆經過設計審核。</p>
+        </li>
+        <li class="step" data-hover-lg>
+          <span class="step__no">04</span>
+          <h3>上線與陪跑</h3>
+          <p>部署上線、教育訓練與後續維運，品牌隨業務一起成長。</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ══════════ CONTACT ══════════ -->
+    <section class="contact" id="contact">
+      <p class="contact__label">START A PROJECT</p>
+      <a href="mailto:nicholas_jie98@outlook.com" class="contact__title" data-hover-lg>
+        <span class="contact__row" data-split>讓我們</span>
+        <span class="contact__row contact__row--accent" data-split>開始對話</span>
+        <em class="contact__en">LET'S TALK &nearr;</em>
+      </a>
+      <p class="contact__mail">nicholas_jie98@outlook.com</p>
+    </section>
+
+  </main>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="footer__left">
+      <span class="footer__logo">智傑資訊 HighTech</span>
+      <span class="footer__tag">Digital &times; Physical Brand Experience</span>
+    </div>
+    <div class="footer__right">
+      <a href="#services" data-hover>服務項目</a>
+      <a href="#identity" data-hover>品牌統籌</a>
+      <a href="#contact" data-hover>聯絡我們</a>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 智傑資訊 HighTech Studio</span>
+      <span>Designed &amp; built in Taiwan</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
