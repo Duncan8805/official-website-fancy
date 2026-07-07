@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>智傑資訊 HighTech — 數位與實體，一致的品牌美學</title>
-  <meta name="description" content="官網建置、ERP 系統開發、UI/UX 設計、品牌視覺統籌（CIS/VI 延伸）。打造線上與線下完美一致的品牌體驗。" />
+  <meta name="description" content="官網建置、ERP 系統開發、UI/UX 設計、品牌視覺統籌。打造線上與線下完美一致的品牌體驗。" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Noto+Serif+TC:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=20260707" />
 </head>
 <body>
 
@@ -27,10 +27,6 @@
 
   <!-- noise texture overlay -->
   <div class="noise" aria-hidden="true"></div>
-
-  <!-- custom cursor -->
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
   <!-- ══════════ NAV ══════════ -->
   <header class="nav" id="nav">
@@ -72,7 +68,7 @@
             <a href="#svc-web" class="chip" data-hover>官網建置</a>
             <a href="#svc-erp" class="chip" data-hover>ERP 系統</a>
             <a href="#svc-ui" class="chip" data-hover>UI/UX 設計</a>
-            <a href="#svc-vi" class="chip" data-hover>品牌識別 CIS/VI</a>
+            <a href="#svc-vi" class="chip" data-hover>品牌識別</a>
           </span>
         </div>
         <div class="hero__actions anim-line">
@@ -127,17 +123,23 @@
             <p class="service__desc">介面好不好用，直接決定客戶留不留。我們用研究與原型驗證，讓每個畫面都直覺。</p>
             <ul class="service__tags"><li>使用者研究</li><li>Wireframe</li><li>Prototype</li><li>設計系統</li></ul>
           </div>
-          <div class="service__visual service__visual--3"></div>
+          <div class="service__visual service__visual--3 service__visual--live">
+            <img src="assets/case-uiux.jpg" alt="UI/UX 設計流程：線框稿、高保真原型與設計系統" loading="lazy" />
+            <span class="service__visual-caption">線框稿 → 高保真原型 → 設計系統</span>
+          </div>
         </article>
 
         <article class="service service--featured" id="svc-vi" data-hover-lg>
           <span class="service__no">04</span>
           <div class="service__main">
-            <h3 class="service__title">品牌視覺統籌<em>CIS / VI Identity</em></h3>
+            <h3 class="service__title">品牌視覺統籌<em>Visual Identity</em></h3>
             <p class="service__desc">讓官網、名片、招牌看起來是同一家公司。專職設計師統整你的視覺，線上線下一次到位。</p>
-            <ul class="service__tags"><li>CIS / VI</li><li>標誌優化</li><li>名片・周邊</li><li>識別規範</li></ul>
+            <ul class="service__tags"><li>VI 識別</li><li>標誌優化</li><li>名片・周邊</li><li>識別規範</li></ul>
           </div>
-          <div class="service__visual service__visual--4"></div>
+          <div class="service__visual service__visual--4 service__visual--live">
+            <img src="assets/case-vi-identity.jpg" alt="品牌識別設計提案：標誌、名片、型錄與數位介面應用" loading="lazy" />
+            <span class="service__visual-caption">品牌識別設計・數位與實體應用</span>
+          </div>
         </article>
       </div>
     </section>
@@ -298,6 +300,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=20260707"></script>
 </body>
 </html>

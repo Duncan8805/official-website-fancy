@@ -28,28 +28,6 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
   });
 });
 
-/* ── custom cursor ── */
-const cursor = document.getElementById("cursor");
-const cursorDot = document.getElementById("cursorDot");
-if (window.matchMedia("(hover: hover)").matches) {
-  const xTo = gsap.quickTo(cursor, "x", { duration: 0.35, ease: "power3" });
-  const yTo = gsap.quickTo(cursor, "y", { duration: 0.35, ease: "power3" });
-  const xDot = gsap.quickTo(cursorDot, "x", { duration: 0.1 });
-  const yDot = gsap.quickTo(cursorDot, "y", { duration: 0.1 });
-  window.addEventListener("mousemove", (e) => {
-    xTo(e.clientX); yTo(e.clientY);
-    xDot(e.clientX); yDot(e.clientY);
-  });
-  document.querySelectorAll("[data-hover]").forEach((el) => {
-    el.addEventListener("mouseenter", () => cursor.classList.add("is-hover"));
-    el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
-  });
-  document.querySelectorAll("[data-hover-lg]").forEach((el) => {
-    el.addEventListener("mouseenter", () => cursor.classList.add("is-hover-lg"));
-    el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover-lg"));
-  });
-}
-
 /* ── nav scrolled state ── */
 const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => {

@@ -51,19 +51,6 @@ ul, ol { list-style: none; }
   80% { transform: translate(3%,3%); }
 }
 
-/* ── custom cursor ── */
-.cursor, .cursor-dot { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 300; border-radius: 50%; }
-.cursor {
-  width: 36px; height: 36px;
-  border: 1px solid rgba(200,164,93,0.6);
-  transform: translate(-50%,-50%);
-  transition: width .35s var(--ease), height .35s var(--ease), background .35s;
-}
-.cursor.is-hover { width: 64px; height: 64px; background: rgba(200,164,93,0.08); }
-.cursor.is-hover-lg { width: 96px; height: 96px; background: rgba(200,164,93,0.1); border-color: rgba(200,164,93,0.9); }
-.cursor-dot { width: 5px; height: 5px; background: var(--gold); transform: translate(-50%,-50%); }
-@media (hover: none) { .cursor, .cursor-dot { display: none; } }
-
 /* ═══════════ PRELOADER ═══════════ */
 .preloader {
   position: fixed; inset: 0; z-index: 400;
