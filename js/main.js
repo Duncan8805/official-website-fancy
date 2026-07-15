@@ -7,6 +7,76 @@ gsap.registerPlugin(ScrollTrigger);
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* ══════════════════════════════════════════════
+   i18n — 中 / EN language toggle
+   Each translatable node carries:
+     data-en        → English text (child elements preserved)
+     data-en-html   → English HTML  (may contain markup, e.g. <br/>)
+   The original Chinese is captured on load, so toggling back is lossless.
+   ══════════════════════════════════════════════ */
+const I18N_KEY = "ht-lang";
+
+/* Replace only the direct text nodes of an element, keeping child elements
+   (e.g. <em>, <i>, <span>) exactly where they are. */
+function setDirectText(el, text) {
+  let placed = false;
+  for (const node of el.childNodes) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      node.textContent = placed ? "" : text;
+      placed = true;
+    }
+  }
+  if (!placed) el.insertBefore(document.createTextNode(text), el.firstChild);
+}
+
+const i18nNodes = Array.from(
+  document.querySelectorAll("[data-en], [data-en-html]")
+);
+
+/* Snapshot the original Chinese so we can restore it. */
+i18nNodes.forEach((el) => {
+  if (el.hasAttribute("data-en-html")) {
+    el.dataset.zhHtml = el.innerHTML;
+  } else if (el.dataset.zh === undefined) {
+    // capture the element's own direct text (first text node)
+    let t = "";
+    for (const node of el.childNodes) {
+      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
+        t = node.textContent;
+        break;
+      }
+    }
+    el.dataset.zh = t;
+  }
+});
+
+function applyLang(lang) {
+  const en = lang === "en";
+  i18nNodes.forEach((el) => {
+    if (el.hasAttribute("data-en-html")) {
+      el.innerHTML = en ? el.dataset.enHtml : el.dataset.zhHtml;
+    } else if (el.tagName === "TITLE") {
+      document.title = en ? el.dataset.en : el.dataset.zh;
+    } else if (el.tagName === "META") {
+      el.setAttribute("content", en ? el.dataset.en : el.dataset.zh);
+    } else {
+      setDirectText(el, en ? el.dataset.en : el.dataset.zh);
+    }
+  });
+
+  document.documentElement.lang = en ? "en" : "zh-Hant";
+  document.documentElement.dataset.lang = en ? "en" : "zh";
+  localStorage.setItem(I18N_KEY, en ? "en" : "zh");
+
+  // re-run the manifesto word-split for the newly set text
+  if (typeof splitManifesto === "function") splitManifesto();
+  if (window.ScrollTrigger) ScrollTrigger.refresh();
+}
+
+let currentLang =
+  localStorage.getItem(I18N_KEY) ||
+  (navigator.language && navigator.language.startsWith("en") ? "en" : "zh");
+
 /* ── Lenis smooth scroll ── */
 let lenis = null;
 if (!reduceMotion) {
@@ -89,22 +159,31 @@ gsap.to(".hero__orb--2", {
 
 /* ── manifesto: word-by-word scrub reveal ── */
 const manifesto = document.getElementById("manifestoText");
-manifesto.innerHTML = manifesto.textContent
-  .trim()
-  .split(/\s+/)
-  .map((w) => `<span class="w">${w}</span>`)
-  .join(" ");
-gsap.to("#manifestoText .w", {
-  opacity: 1,
-  stagger: 0.06,
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".manifesto",
-    start: "top 75%",
-    end: "bottom 55%",
-    scrub: 0.6,
-  },
-});
+let manifestoST = null;
+
+function splitManifesto() {
+  const lang = document.documentElement.dataset.lang === "en" ? "en" : "zh";
+  const text = (lang === "en" ? manifesto.dataset.en : manifesto.dataset.zh).trim();
+  manifesto.innerHTML = text
+    .split(/\s+/)
+    .map((w) => `<span class="w">${w}</span>`)
+    .join(" ");
+  if (manifestoST) manifestoST.kill();
+  gsap.set("#manifestoText .w", { opacity: 0.14 });
+  const tween = gsap.to("#manifestoText .w", {
+    opacity: 1,
+    stagger: 0.06,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".manifesto",
+      start: "top 75%",
+      end: "bottom 55%",
+      scrub: 0.6,
+    },
+  });
+  manifestoST = tween.scrollTrigger;
+}
+splitManifesto();
 
 /* ── generic section-head + service reveals ── */
 document.querySelectorAll(".section-head, .identity__head").forEach((el) => {
@@ -144,9 +223,9 @@ if (!reduceMotion && window.innerWidth > 720) {
     },
   });
 } else {
-  idTrack.style.overflowX = "auto";
+  // small screens: cards stack vertically via CSS — no horizontal scroll/pin
+  idTrack.style.overflowX = "visible";
   idTrack.style.width = "100%";
-  idTrack.style.paddingBottom = "24px";
 }
 
 /* ── stats counters ── */
@@ -174,5 +253,23 @@ gsap.from(".contact__en, .contact__mail, .contact__label", {
   opacity: 0, y: 30, duration: 1, ease: "power3.out", stagger: 0.1,
   scrollTrigger: { trigger: ".contact", start: "top 65%" },
 });
+
+/* ── language toggle wiring ── */
+const langToggle = document.getElementById("langToggle");
+if (langToggle) {
+  langToggle.addEventListener("click", () => {
+    currentLang = document.documentElement.dataset.lang === "en" ? "zh" : "en";
+    applyLang(currentLang);
+  });
+}
+
+/* apply the initial language now that splitManifesto is defined
+   (skip the manifesto re-split if the default is Chinese — it already
+   rendered above; only re-run when switching to English) */
+if (currentLang === "en") {
+  applyLang("en");
+} else {
+  document.documentElement.dataset.lang = "zh";
+}
 
 window.addEventListener("load", () => ScrollTrigger.refresh());

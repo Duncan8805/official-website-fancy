@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>智傑資訊 HighTech — 數位與實體，一致的品牌美學</title>
-  <meta name="description" content="官網建置、ERP 系統開發、UI/UX 設計、品牌視覺統籌。打造線上與線下完美一致的品牌體驗。" />
+  <title data-en="HighTech Studio — One Brand Aesthetic, Digital &amp; Physical">智傑資訊 HighTech — 數位與實體，一致的品牌美學</title>
+  <meta name="description" content="官網建置、ERP 系統開發、UI/UX 設計、品牌視覺統籌。打造線上與線下完美一致的品牌體驗。" data-en="Website development, ERP systems, UI/UX design and visual identity — crafting a brand experience that stays perfectly consistent online and off." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Noto+Serif+TC:wght@300;400;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css?v=20260707" />
+  <link rel="stylesheet" href="css/style.css?v=20260715" />
 </head>
 <body>
 
@@ -35,11 +35,14 @@
       <span class="nav__logo-text">智傑資訊 <em>HighTech</em></span>
     </a>
     <nav class="nav__links">
-      <a href="#services" data-hover>服務項目</a>
-      <a href="#identity" data-hover>品牌統籌</a>
-      <a href="#studio" data-hover>工作室</a>
-      <a href="#process" data-hover>合作流程</a>
-      <a href="#contact" class="nav__cta" data-hover><span>免費諮詢</span></a>
+      <a href="#services" data-hover data-en="Services">服務項目</a>
+      <a href="#identity" data-hover data-en="Identity">品牌統籌</a>
+      <a href="#studio" data-hover data-en="Studio">工作室</a>
+      <a href="#process" data-hover data-en="Process">合作流程</a>
+      <a href="#contact" class="nav__cta" data-hover><span data-en="Free Consult">免費諮詢</span></a>
+      <button type="button" class="nav__lang" id="langToggle" data-hover aria-label="Switch language">
+        <span class="nav__lang-zh">中</span><i>/</i><span class="nav__lang-en">EN</span>
+      </button>
     </nav>
   </header>
 
@@ -56,23 +59,23 @@
       <div class="hero__content">
         <p class="hero__eyebrow anim-line"><span>DIGITAL BRAND STUDIO — TAIWAN</span></p>
         <h1 class="hero__title">
-          <span class="hero__row"><span class="hero__word" data-split>官網</span><span class="hero__word hero__word--serif" data-split>・</span><span class="hero__word" data-split>系統</span></span>
+          <span class="hero__row"><span class="hero__word" data-split data-en="Web">官網</span><span class="hero__word hero__word--serif" data-split>・</span><span class="hero__word" data-split data-en="Systems">系統</span></span>
           <span class="hero__row"><em class="hero__row-en" data-split>Web&nbsp;/&nbsp;ERP&nbsp;/&nbsp;Identity</em></span>
-          <span class="hero__row"><span class="hero__word hero__word--accent" data-split>品牌識別設計</span></span>
+          <span class="hero__row"><span class="hero__word hero__word--accent" data-split data-en="Brand Identity Design">品牌識別設計</span></span>
         </h1>
         <div class="hero__sub anim-line">
-          <span>數位與實體，一致的品牌美學——從官網到名片，每個細節說同一種語言。</span>
+          <span data-en="One brand aesthetic across digital and physical — from your website to your business card, every detail speaks the same language.">數位與實體，一致的品牌美學——從官網到名片，每個細節說同一種語言。</span>
         </div>
         <div class="hero__chips anim-line">
           <span>
-            <a href="#svc-web" class="chip" data-hover>官網建置</a>
-            <a href="#svc-erp" class="chip" data-hover>ERP 系統</a>
-            <a href="#svc-ui" class="chip" data-hover>UI/UX 設計</a>
-            <a href="#svc-vi" class="chip" data-hover>品牌識別</a>
+            <a href="#svc-web" class="chip" data-hover data-en="Web Design">官網建置</a>
+            <a href="#svc-erp" class="chip" data-hover data-en="ERP Systems">ERP 系統</a>
+            <a href="#svc-ui" class="chip" data-hover data-en="UI/UX Design">UI/UX 設計</a>
+            <a href="#svc-vi" class="chip" data-hover data-en="Brand Identity">品牌識別</a>
           </span>
         </div>
         <div class="hero__actions anim-line">
-          <a href="#contact" class="btn btn--solid" data-hover><span>免費諮詢</span></a>
+          <a href="#contact" class="btn btn--solid" data-hover><span data-en="Free Consult">免費諮詢</span></a>
         </div>
       </div>
 
@@ -86,59 +89,59 @@
     <section class="services" id="services">
       <div class="section-head">
         <p class="section-head__label">SERVICES</p>
-        <h2 class="section-head__title">四項核心服務<em>What we do</em></h2>
+        <h2 class="section-head__title"><span data-en="Four Core Services">四項核心服務</span><em>What we do</em></h2>
       </div>
 
       <div class="services__list">
         <article class="service" id="svc-web" data-hover-lg>
           <span class="service__no">01</span>
           <div class="service__main">
-            <h3 class="service__title">官網建置<em>Web Design</em></h3>
-            <p class="service__desc">做一個幫你接單的官網。手機、電腦都好看，客戶搜得到、看得懂、聯絡得到你。</p>
-            <ul class="service__tags"><li>品牌官網</li><li>RWD</li><li>互動動效</li><li>SEO</li></ul>
+            <h3 class="service__title"><span data-en="Web Design">官網建置</span><em>Web Design</em></h3>
+            <p class="service__desc" data-en="A website built to win business. Polished on mobile and desktop — customers find you, understand you, and get in touch.">做一個幫你接單的官網。手機、電腦都好看，客戶搜得到、看得懂、聯絡得到你。</p>
+            <ul class="service__tags"><li data-en="Brand Sites">品牌官網</li><li>RWD</li><li data-en="Motion">互動動效</li><li>SEO</li></ul>
           </div>
           <a class="service__visual service__visual--1 service__visual--live" href="https://duncan8805.github.io/chang-fu-rice/" target="_blank" rel="noopener" data-hover aria-label="查看實際案例：長富稻穀乾燥中心">
             <img src="assets/case-chang-fu-rice.jpg" alt="長富稻穀乾燥中心官網截圖" loading="lazy" />
-            <span class="service__visual-caption">實際案例：長富稻穀乾燥中心 <i>&nearr;</i></span>
+            <span class="service__visual-caption" data-en="Live case: Chang-Fu Rice Drying Center ">實際案例：長富稻穀乾燥中心 <i>&nearr;</i></span>
           </a>
         </article>
 
         <article class="service" id="svc-erp" data-hover-lg>
           <span class="service__no">02</span>
           <div class="service__main">
-            <h3 class="service__title">系統建置<em>ERP System</em></h3>
-            <p class="service__desc">庫存、訂單、財務、人資管進同一套系統。重複的工作交給電腦，數字一目了然。</p>
-            <ul class="service__tags"><li>ERP</li><li>流程自動化</li><li>客製模組</li><li>資料整合</li></ul>
+            <h3 class="service__title"><span data-en="ERP Systems">系統建置</span><em>ERP System</em></h3>
+            <p class="service__desc" data-en="Inventory, orders, finance and HR in a single system. Automate the repetitive work and keep every number clear at a glance.">庫存、訂單、財務、人資管進同一套系統。重複的工作交給電腦，數字一目了然。</p>
+            <ul class="service__tags"><li>ERP</li><li data-en="Automation">流程自動化</li><li data-en="Custom Modules">客製模組</li><li data-en="Data Integration">資料整合</li></ul>
           </div>
           <div class="service__visual service__visual--2 service__visual--live">
             <img src="assets/case-chang-fu-erp.jpg" alt="長富稻穀廠過磅結算系統畫面" loading="lazy" />
-            <span class="service__visual-caption">實際案例：長富稻穀廠 過磅結算系統</span>
+            <span class="service__visual-caption" data-en="Live case: Chang-Fu Rice — Weighing & Settlement System">實際案例：長富稻穀廠 過磅結算系統</span>
           </div>
         </article>
 
         <article class="service" id="svc-ui" data-hover-lg>
           <span class="service__no">03</span>
           <div class="service__main">
-            <h3 class="service__title">UI/UX 設計<em>Experience Design</em></h3>
-            <p class="service__desc">介面好不好用，直接決定客戶留不留。我們用研究與原型驗證，讓每個畫面都直覺。</p>
-            <ul class="service__tags"><li>使用者研究</li><li>Wireframe</li><li>Prototype</li><li>設計系統</li></ul>
+            <h3 class="service__title"><span data-en="UI/UX Design">UI/UX 設計</span><em>Experience Design</em></h3>
+            <p class="service__desc" data-en="How usable an interface is decides whether customers stay. We validate with research and prototypes so every screen feels intuitive.">介面好不好用，直接決定客戶留不留。我們用研究與原型驗證，讓每個畫面都直覺。</p>
+            <ul class="service__tags"><li data-en="User Research">使用者研究</li><li>Wireframe</li><li>Prototype</li><li data-en="Design System">設計系統</li></ul>
           </div>
           <div class="service__visual service__visual--3 service__visual--live">
             <img src="assets/case-uiux.jpg" alt="UI/UX 設計流程：線框稿、高保真原型與設計系統" loading="lazy" />
-            <span class="service__visual-caption">線框稿 → 高保真原型 → 設計系統</span>
+            <span class="service__visual-caption" data-en="Wireframe → High-fidelity prototype → Design system">線框稿 → 高保真原型 → 設計系統</span>
           </div>
         </article>
 
         <article class="service service--featured" id="svc-vi" data-hover-lg>
           <span class="service__no">04</span>
           <div class="service__main">
-            <h3 class="service__title">品牌視覺統籌<em>Visual Identity</em></h3>
-            <p class="service__desc">讓官網、名片、招牌看起來是同一家公司。專職設計師統整你的視覺，線上線下一次到位。</p>
-            <ul class="service__tags"><li>VI 識別</li><li>標誌優化</li><li>名片・周邊</li><li>識別規範</li></ul>
+            <h3 class="service__title"><span data-en="Visual Identity">品牌視覺統籌</span><em>Visual Identity</em></h3>
+            <p class="service__desc" data-en="Make your website, business card and signage look like one company. A dedicated designer unifies your visuals — online and offline, in one pass.">讓官網、名片、招牌看起來是同一家公司。專職設計師統整你的視覺，線上線下一次到位。</p>
+            <ul class="service__tags"><li data-en="VI System">VI 識別</li><li data-en="Logo Refinement">標誌優化</li><li data-en="Cards & Collateral">名片・周邊</li><li data-en="Brand Guidelines">識別規範</li></ul>
           </div>
           <div class="service__visual service__visual--4 service__visual--live">
             <img src="assets/case-vi-identity.jpg" alt="品牌識別設計提案：標誌、名片、型錄與數位介面應用" loading="lazy" />
-            <span class="service__visual-caption">品牌識別設計・數位與實體應用</span>
+            <span class="service__visual-caption" data-en="Brand identity design · digital & physical applications">品牌識別設計・數位與實體應用</span>
           </div>
         </article>
       </div>
@@ -147,7 +150,7 @@
     <!-- ══════════ MANIFESTO ══════════ -->
     <section class="manifesto">
       <p class="manifesto__label">OUR BELIEF</p>
-      <p class="manifesto__text" id="manifestoText">
+      <p class="manifesto__text" id="manifestoText" data-zh="一個品牌的專業感， 藏在每一次接觸的細節裡—— 螢幕上、名片上， 都是同一個你。" data-en="A brand's professionalism lives in the detail of every touchpoint — on screen, on paper, always unmistakably you.">
         一個品牌的專業感， 藏在每一次接觸的細節裡—— 螢幕上、名片上， 都是同一個你。
       </p>
     </section>
@@ -157,29 +160,29 @@
       <div class="identity__pin" id="identityPin">
         <div class="identity__head">
           <p class="section-head__label section-head__label--light">BRAND CONSISTENCY</p>
-          <h2 class="identity__title">線上 <span>&times;</span> 線下<br/>完美一致的品牌體驗</h2>
-          <p class="identity__sub">在團隊提供網頁設計的同時，將品牌美感同步轉化為實體視覺。<br/>為你解決多方溝通的繁瑣，一站式確保全方位的品牌形象一致。</p>
+          <h2 class="identity__title" data-en-html="Online <span>&times;</span> Offline<br/>A perfectly consistent brand experience">線上 <span>&times;</span> 線下<br/>完美一致的品牌體驗</h2>
+          <p class="identity__sub" data-en-html="While the team designs your website, we translate that same aesthetic into your physical visuals.<br/>We spare you the hassle of coordinating multiple vendors — one stop to keep your whole brand image consistent.">在團隊提供網頁設計的同時，將品牌美感同步轉化為實體視覺。<br/>為你解決多方溝通的繁瑣，一站式確保全方位的品牌形象一致。</p>
         </div>
         <div class="identity__track" id="identityTrack">
           <div class="id-card">
             <span class="id-card__no">A</span>
-            <h3>數位介面<em>UI / UX</em></h3>
-            <p>網站、系統後台、App——品牌色彩、字體與元件在每個畫面中精準延伸。</p>
+            <h3><span data-en="Digital Interfaces">數位介面</span><em>UI / UX</em></h3>
+            <p data-en="Websites, admin dashboards, apps — brand colors, type and components extend precisely across every screen.">網站、系統後台、App——品牌色彩、字體與元件在每個畫面中精準延伸。</p>
           </div>
           <div class="id-card">
             <span class="id-card__no">B</span>
-            <h3>標誌精煉<em>Logo Refinement</em></h3>
-            <p>梳理既有視覺資產，美感優化與細節精煉，讓標誌在任何尺寸下都經得起檢視。</p>
+            <h3><span data-en="Logo Refinement">標誌精煉</span><em>Logo Refinement</em></h3>
+            <p data-en="We refine your existing visual assets — sharpening aesthetics and detail so the logo holds up at any size.">梳理既有視覺資產，美感優化與細節精煉，讓標誌在任何尺寸下都經得起檢視。</p>
           </div>
           <div class="id-card">
             <span class="id-card__no">C</span>
-            <h3>實體識別<em>Physical VI</em></h3>
-            <p>名片、信封、簡報模板、招牌——頂級數位介面之外，不漏掉任何實體細節。</p>
+            <h3><span data-en="Physical Identity">實體識別</span><em>Physical VI</em></h3>
+            <p data-en="Business cards, envelopes, slide templates, signage — beyond a top-tier digital interface, no physical detail is left out.">名片、信封、簡報模板、招牌——頂級數位介面之外，不漏掉任何實體細節。</p>
           </div>
           <div class="id-card">
             <span class="id-card__no">D</span>
-            <h3>規範手冊<em>Guidelines</em></h3>
-            <p>數位與實體形象周邊規範，一本手冊讓內部團隊與外部廠商都不再走鐘。</p>
+            <h3><span data-en="Guidelines">規範手冊</span><em>Guidelines</em></h3>
+            <p data-en="One guidebook covering digital and physical brand assets — so your internal team and outside vendors never drift off-brand.">數位與實體形象周邊規範，一本手冊讓內部團隊與外部廠商都不再走鐘。</p>
           </div>
         </div>
       </div>
@@ -187,50 +190,50 @@
 
     <!-- ══════════ STATS ══════════ -->
     <section class="stats">
-      <div class="stat"><strong data-count="10">0</strong><span>年以上核心成員經驗</span></div>
-      <div class="stat"><strong data-count="4">0</strong><span>項一站式整合服務</span></div>
-      <div class="stat"><strong data-count="100">0</strong><span>％ 線上線下視覺一致</span></div>
-      <div class="stat"><strong data-count="1">0</strong><span>個窗口，全程對接</span></div>
+      <div class="stat"><strong data-count="10">0</strong><span data-en="+ years of core-team experience">年以上核心成員經驗</span></div>
+      <div class="stat"><strong data-count="4">0</strong><span data-en=" integrated services, end to end">項一站式整合服務</span></div>
+      <div class="stat"><strong data-count="100">0</strong><span data-en="% online-to-offline visual consistency">％ 線上線下視覺一致</span></div>
+      <div class="stat"><strong data-count="1">0</strong><span data-en=" point of contact, start to finish">個窗口，全程對接</span></div>
     </section>
 
     <!-- ══════════ STUDIO ══════════ -->
     <section class="studio" id="studio">
       <div class="section-head">
         <p class="section-head__label">STUDIO</p>
-        <h2 class="section-head__title">認識工作室<em>Who we are</em></h2>
+        <h2 class="section-head__title"><span data-en="Meet the Studio">認識工作室</span><em>Who we are</em></h2>
       </div>
       <div class="studio__grid">
         <div class="studio__statement">
-          <p class="studio__lead">我們是一支精實的數位團隊——<br/>小到每個決策都有人負責，<br/>大到足以撐起你的整個品牌。</p>
-          <p class="studio__body">核心成員各自深耕產業十年以上，從業務策略、系統工程到介面設計，並與視覺統籌設計師深度協作。你不需要在網頁公司、系統廠商與設計工作室之間來回傳話——面對我們，永遠只有一個窗口。</p>
+          <p class="studio__lead" data-en-html="We're a lean digital team —<br/>small enough that someone owns every decision,<br/>big enough to carry your entire brand.">我們是一支精實的數位團隊——<br/>小到每個決策都有人負責，<br/>大到足以撐起你的整個品牌。</p>
+          <p class="studio__body" data-en="Each core member brings 10+ years in their field — from business strategy and systems engineering to interface design — working hand in hand with a dedicated visual-identity designer. No more relaying messages between a web agency, a systems vendor and a design studio: with us, there is always a single point of contact.">核心成員各自深耕產業十年以上，從業務策略、系統工程到介面設計，並與視覺統籌設計師深度協作。你不需要在網頁公司、系統廠商與設計工作室之間來回傳話——面對我們，永遠只有一個窗口。</p>
         </div>
         <div class="studio__disciplines">
           <div class="disc" data-hover-lg>
             <span class="disc__no">01</span>
             <div>
-              <h3>策略與顧問<em>Strategy</em></h3>
-              <p>理解你的商業模式，把預算花在真正能帶來成長的地方。</p>
+              <h3><span data-en="Strategy & Consulting">策略與顧問</span><em>Strategy</em></h3>
+              <p data-en="We understand your business model and spend the budget where it actually drives growth.">理解你的商業模式，把預算花在真正能帶來成長的地方。</p>
             </div>
           </div>
           <div class="disc" data-hover-lg>
             <span class="disc__no">02</span>
             <div>
-              <h3>全端工程<em>Engineering</em></h3>
-              <p>從官網前端到 ERP 後台，穩定、安全、跟得上業務規模的程式碼。</p>
+              <h3><span data-en="Full-stack Engineering">全端工程</span><em>Engineering</em></h3>
+              <p data-en="From website front-end to ERP back-end — stable, secure code that keeps pace with your business.">從官網前端到 ERP 後台，穩定、安全、跟得上業務規模的程式碼。</p>
             </div>
           </div>
           <div class="disc" data-hover-lg>
             <span class="disc__no">03</span>
             <div>
-              <h3>UI/UX 設計<em>Experience</em></h3>
-              <p>以使用者研究為根據的介面設計，好看，而且真的好用。</p>
+              <h3><span data-en="UI/UX Design">UI/UX 設計</span><em>Experience</em></h3>
+              <p data-en="Interface design grounded in user research — beautiful, and genuinely easy to use.">以使用者研究為根據的介面設計，好看，而且真的好用。</p>
             </div>
           </div>
           <div class="disc" data-hover-lg>
             <span class="disc__no">04</span>
             <div>
-              <h3>視覺統籌<em>Visual Identity</em></h3>
-              <p>專職視覺統籌設計師坐鎮，數位介面與實體識別出自同一雙眼睛。</p>
+              <h3><span data-en="Visual Direction">視覺統籌</span><em>Visual Identity</em></h3>
+              <p data-en="A dedicated visual-identity designer on board — digital interfaces and physical identity from the same pair of eyes.">專職視覺統籌設計師坐鎮，數位介面與實體識別出自同一雙眼睛。</p>
             </div>
           </div>
         </div>
@@ -241,28 +244,28 @@
     <section class="process" id="process">
       <div class="section-head">
         <p class="section-head__label">PROCESS</p>
-        <h2 class="section-head__title">合作流程<em>How we work</em></h2>
+        <h2 class="section-head__title"><span data-en="How We Work">合作流程</span><em>How we work</em></h2>
       </div>
       <ol class="process__list">
         <li class="step" data-hover-lg>
           <span class="step__no">01</span>
-          <h3>需求訪談</h3>
-          <p>免費諮詢。理解你的產業、目標與既有品牌資產，定義專案範圍。</p>
+          <h3 data-en="Discovery">需求訪談</h3>
+          <p data-en="Free consultation. We understand your industry, goals and existing brand assets, then define the project scope.">免費諮詢。理解你的產業、目標與既有品牌資產，定義專案範圍。</p>
         </li>
         <li class="step" data-hover-lg>
           <span class="step__no">02</span>
-          <h3>策略與設計</h3>
-          <p>視覺統籌設計師與 UI/UX 團隊同步作業，數位與實體識別一次到位。</p>
+          <h3 data-en="Strategy & Design">策略與設計</h3>
+          <p data-en="The visual-identity designer and UI/UX team work in sync — digital and physical identity delivered in one pass.">視覺統籌設計師與 UI/UX 團隊同步作業，數位與實體識別一次到位。</p>
         </li>
         <li class="step" data-hover-lg>
           <span class="step__no">03</span>
-          <h3>開發與整合</h3>
-          <p>官網、系統開發與品牌規範落地，每個環節皆經過設計審核。</p>
+          <h3 data-en="Build & Integration">開發與整合</h3>
+          <p data-en="Website, systems development and brand guidelines come to life — every step passes design review.">官網、系統開發與品牌規範落地，每個環節皆經過設計審核。</p>
         </li>
         <li class="step" data-hover-lg>
           <span class="step__no">04</span>
-          <h3>上線與陪跑</h3>
-          <p>部署上線、教育訓練與後續維運，品牌隨業務一起成長。</p>
+          <h3 data-en="Launch & Support">上線與陪跑</h3>
+          <p data-en="Deployment, training and ongoing maintenance — your brand grows right alongside your business.">部署上線、教育訓練與後續維運，品牌隨業務一起成長。</p>
         </li>
       </ol>
     </section>
@@ -271,8 +274,8 @@
     <section class="contact" id="contact">
       <p class="contact__label">START A PROJECT</p>
       <a href="mailto:nicholas_jie98@outlook.com" class="contact__title" data-hover-lg>
-        <span class="contact__row" data-split>讓我們</span>
-        <span class="contact__row contact__row--accent" data-split>開始對話</span>
+        <span class="contact__row" data-split data-en="Let's">讓我們</span>
+        <span class="contact__row contact__row--accent" data-split data-en="Talk">開始對話</span>
         <em class="contact__en">LET'S TALK &nearr;</em>
       </a>
       <p class="contact__mail">nicholas_jie98@outlook.com</p>
@@ -287,9 +290,9 @@
       <span class="footer__tag">Digital &times; Physical Brand Experience</span>
     </div>
     <div class="footer__right">
-      <a href="#services" data-hover>服務項目</a>
-      <a href="#identity" data-hover>品牌統籌</a>
-      <a href="#contact" data-hover>聯絡我們</a>
+      <a href="#services" data-hover data-en="Services">服務項目</a>
+      <a href="#identity" data-hover data-en="Identity">品牌統籌</a>
+      <a href="#contact" data-hover data-en="Contact">聯絡我們</a>
     </div>
     <div class="footer__base">
       <span>© 2026 智傑資訊 HighTech Studio</span>
@@ -300,6 +303,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="js/main.js?v=20260707"></script>
+  <script src="js/main.js?v=20260715"></script>
 </body>
 </html>
