@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   智傑科技 HighTech — interactions
+   杰辰資訊 Jetron — interactions
    GSAP + ScrollTrigger + Lenis
    ═══════════════════════════════════════════ */
 
