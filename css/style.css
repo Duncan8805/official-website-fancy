@@ -87,10 +87,9 @@ ul, ol { list-style: none; }
 }
 .nav__logo { display: flex; align-items: center; gap: 12px; }
 .nav__logo-mark {
-  width: 38px; height: 38px; display: grid; place-items: center;
-  border: 1px solid var(--gold); color: var(--gold);
-  font-family: var(--serif); font-weight: 600; font-size: 1.05rem;
-  border-radius: 2px;
+  height: 60px; width: 60px;
+  object-fit: contain;
+  display: block;
 }
 .nav__logo-text { font-size: 0.9rem; font-weight: 500; letter-spacing: 0.08em; }
 .nav__logo-text em { font-family: var(--serif); font-style: italic; color: var(--ink-dim); margin-left: 4px; }
