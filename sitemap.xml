@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jetron-information.com/</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/en/</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/" />
   </url>
 </urlset>

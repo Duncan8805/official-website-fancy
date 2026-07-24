@@ -8,74 +8,25 @@ gsap.registerPlugin(ScrollTrigger);
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ══════════════════════════════════════════════
-   i18n — 中 / EN language toggle
-   Each translatable node carries:
-     data-en        → English text (child elements preserved)
-     data-en-html   → English HTML  (may contain markup, e.g. <br/>)
-   The original Chinese is captured on load, so toggling back is lossless.
+   i18n — 中 (/) and EN (/en/) are separate static pages
+   (crawlable + hreflang). The nav toggle is a plain link;
+   we remember the visitor's choice and redirect first-time
+   visitors whose browser prefers English.
    ══════════════════════════════════════════════ */
 const I18N_KEY = "ht-lang";
+const PAGE_LANG = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "zh";
+document.documentElement.dataset.lang = PAGE_LANG;
 
-/* Replace only the direct text nodes of an element, keeping child elements
-   (e.g. <em>, <i>, <span>) exactly where they are. */
-function setDirectText(el, text) {
-  let placed = false;
-  for (const node of el.childNodes) {
-    if (node.nodeType === Node.TEXT_NODE) {
-      node.textContent = placed ? "" : text;
-      placed = true;
-    }
+let langRedirected = false;
+if (PAGE_LANG === "zh") {
+  const stored = localStorage.getItem(I18N_KEY);
+  const browserEn = navigator.language && navigator.language.toLowerCase().startsWith("en");
+  if (stored === "en" || (!stored && browserEn)) {
+    langRedirected = true;
+    location.replace("en/index.html");
   }
-  if (!placed) el.insertBefore(document.createTextNode(text), el.firstChild);
 }
-
-const i18nNodes = Array.from(
-  document.querySelectorAll("[data-en], [data-en-html]")
-);
-
-/* Snapshot the original Chinese so we can restore it. */
-i18nNodes.forEach((el) => {
-  if (el.hasAttribute("data-en-html")) {
-    el.dataset.zhHtml = el.innerHTML;
-  } else if (el.dataset.zh === undefined) {
-    // capture the element's own direct text (first text node)
-    let t = "";
-    for (const node of el.childNodes) {
-      if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-        t = node.textContent;
-        break;
-      }
-    }
-    el.dataset.zh = t;
-  }
-});
-
-function applyLang(lang) {
-  const en = lang === "en";
-  i18nNodes.forEach((el) => {
-    if (el.hasAttribute("data-en-html")) {
-      el.innerHTML = en ? el.dataset.enHtml : el.dataset.zhHtml;
-    } else if (el.tagName === "TITLE") {
-      document.title = en ? el.dataset.en : el.dataset.zh;
-    } else if (el.tagName === "META") {
-      el.setAttribute("content", en ? el.dataset.en : el.dataset.zh);
-    } else {
-      setDirectText(el, en ? el.dataset.en : el.dataset.zh);
-    }
-  });
-
-  document.documentElement.lang = en ? "en" : "zh-Hant";
-  document.documentElement.dataset.lang = en ? "en" : "zh";
-  localStorage.setItem(I18N_KEY, en ? "en" : "zh");
-
-  // re-run the manifesto word-split for the newly set text
-  if (typeof splitManifesto === "function") splitManifesto();
-  if (window.ScrollTrigger) ScrollTrigger.refresh();
-}
-
-let currentLang =
-  localStorage.getItem(I18N_KEY) ||
-  (navigator.language && navigator.language.startsWith("en") ? "en" : "zh");
+if (!langRedirected) localStorage.setItem(I18N_KEY, PAGE_LANG);
 
 /* ── Lenis smooth scroll ── */
 let lenis = null;
@@ -254,22 +205,12 @@ gsap.from(".contact__en, .contact__mail, .contact__label", {
   scrollTrigger: { trigger: ".contact", start: "top 65%" },
 });
 
-/* ── language toggle wiring ── */
+/* ── language toggle: store the choice, then follow the link ── */
 const langToggle = document.getElementById("langToggle");
 if (langToggle) {
   langToggle.addEventListener("click", () => {
-    currentLang = document.documentElement.dataset.lang === "en" ? "zh" : "en";
-    applyLang(currentLang);
+    localStorage.setItem(I18N_KEY, PAGE_LANG === "zh" ? "en" : "zh");
   });
-}
-
-/* apply the initial language now that splitManifesto is defined
-   (skip the manifesto re-split if the default is Chinese — it already
-   rendered above; only re-run when switching to English) */
-if (currentLang === "en") {
-  applyLang("en");
-} else {
-  document.documentElement.dataset.lang = "zh";
 }
 
 window.addEventListener("load", () => ScrollTrigger.refresh());
