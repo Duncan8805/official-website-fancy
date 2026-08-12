@@ -9,3 +9,6 @@ tools/.fontcache/
 # Python bytecode from tools/
 __pycache__/
 *.pyc
+
+# Local SEO/GEO working reports (would be publicly served if committed)
+*-ANALYSIS.md

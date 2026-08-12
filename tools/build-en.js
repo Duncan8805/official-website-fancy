@@ -42,12 +42,33 @@ function urlPathOf(master) {
   return "/" + dir;
 }
 
+const TODAY = new Date().toISOString().slice(0, 10);
+
+/* Stamp the current build date onto freshness signals: schema dateModified and
+   the visible <time> in the dateline. datePublished is deliberately left alone
+   so it keeps recording when the page first went live. */
+function stampDate(html) {
+  return html
+    .replace(/"dateModified":\s*"\d{4}-\d{2}-\d{2}"/g, `"dateModified": "${TODAY}"`)
+    .replace(/(<time datetime=")\d{4}-\d{2}-\d{2}(">)\d{4}-\d{2}-\d{2}(<\/time>)/g,
+             `$1${TODAY}$2${TODAY}$3`);
+}
+
 function buildPage(master) {
   const urlPath = urlPathOf(master);              // "/"  |  "/services/erp/"
   const zhUrl = SITE + urlPath;
   const enUrl = SITE + "/en" + urlPath;
 
-  const dom = new JSDOM(fs.readFileSync(master, "utf8"));
+  // Refresh the Chinese master's dateModified/<time> to today, then build the
+  // English page from the stamped source so both languages share the date.
+  let raw = fs.readFileSync(master, "utf8");
+  const stamped = stampDate(raw);
+  if (stamped !== raw) {
+    fs.writeFileSync(master, stamped, "utf8");
+    raw = stamped;
+  }
+
+  const dom = new JSDOM(raw);
   const doc = dom.window.document;
 
   /* 1 ── document language */
