@@ -141,14 +141,15 @@ ul, ol { list-style: none; }
   padding-top: 14px; padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
 }
-.nav__logo { display: flex; align-items: center; gap: 12px; }
-.nav__logo-mark {
-  height: 60px; width: 60px;
-  object-fit: contain;
-  display: block;
+.nav__logo { display: flex; align-items: center; gap: 11px; }
+.nav__logo-zh {
+  font-size: 0.9rem; font-weight: 500; letter-spacing: 0.14em;
+  padding-right: 11px; border-right: 1px solid var(--line);
 }
-.nav__logo-text { font-size: 0.9rem; font-weight: 500; letter-spacing: 0.08em; }
-.nav__logo-text em { font-family: var(--serif); font-style: italic; color: var(--ink-dim); margin-left: 4px; }
+.nav__logo-wordmark {
+  height: 22px; width: auto; display: block;
+  /* the gold wordmark PNG already matches --gold */
+}
 .nav__links { display: flex; align-items: center; gap: clamp(18px, 3vw, 40px); font-size: 0.85rem; letter-spacing: 0.12em; }
 .nav__links a:not(.nav__cta):not(.nav__lang) { position: relative; padding: 4px 0; color: var(--ink-dim); transition: color .3s; }
 .nav__links a:not(.nav__cta):not(.nav__lang):hover { color: var(--ink); }
@@ -191,7 +192,9 @@ html[data-lang="zh"] .nav__lang-en,
 html[data-lang="en"] .nav__lang-zh { color: var(--ink-dim); opacity: 0.55; }
 
 @media (max-width: 960px) {
-  .nav__logo-text { display: none; }
+  /* on small screens drop the Chinese name and its divider; keep the wordmark */
+  .nav__logo-zh { display: none; }
+  .nav__logo { gap: 0; }
 }
 @media (max-width: 720px) {
   .nav__links a:not(.nav__cta):not(.nav__lang) { display: none; }
