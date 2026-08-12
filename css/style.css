@@ -2,6 +2,44 @@
    杰辰資訊 Jetron — Fancy Brand Site
    ═══════════════════════════════════════════ */
 
+/* ═══════════ SELF-HOSTED FONTS ═══════════
+   Subset + variable (wght 300–600 only, the range this stylesheet uses).
+   Replaces the Google Fonts <link>, which was 272 KB of render-blocking CSS
+   pulling 34 woff2 files / 2.46 MB. Regenerate with:  python tools/build-fonts.py
+   ═════════════════════════════════════════ */
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("../assets/fonts/noto-sans-tc.woff2?v=20260812") format("woff2-variations"),
+       url("../assets/fonts/noto-sans-tc.woff2?v=20260812") format("woff2");
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif TC";
+  src: url("../assets/fonts/noto-serif-tc.woff2?v=20260812") format("woff2-variations"),
+       url("../assets/fonts/noto-serif-tc.woff2?v=20260812") format("woff2");
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("../assets/fonts/fraunces.woff2?v=20260812") format("woff2-variations"),
+       url("../assets/fonts/fraunces.woff2?v=20260812") format("woff2");
+  font-weight: 300 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("../assets/fonts/fraunces-italic.woff2?v=20260812") format("woff2-variations"),
+       url("../assets/fonts/fraunces-italic.woff2?v=20260812") format("woff2");
+  font-weight: 300 600;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --bg: #0b0b0d;
   --bg-2: #101014;
@@ -637,6 +675,83 @@ html[data-lang="en"] .nav__lang-zh { color: var(--ink-dim); opacity: 0.55; }
 /* ═══════════ REVEAL HELPERS ═══════════ */
 .anim-line { overflow: hidden; }
 .anim-line > span { display: inline-block; }
+
+.service__more { margin-top: 18px; font-size: 0.85rem; }
+.service__more a { color: var(--gold); text-decoration: none; }
+.service__more a:hover { text-decoration: underline; }
+
+/* ═══════════ SUB-PAGES (case studies, service pages) ═══════════ */
+.subpage { padding: 140px clamp(20px, 6vw, 96px) 0; max-width: 1180px; margin: 0 auto; }
+.subpage__crumb { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-dim); }
+.subpage__crumb a { color: var(--ink-dim); text-decoration: none; }
+.subpage__crumb a:hover { color: var(--gold); }
+.subpage__title {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(2.1rem, 5.6vw, 4.2rem); line-height: 1.22;
+  margin: 24px 0 20px; max-width: 20ch;
+}
+.subpage__lede { font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.95; color: var(--ink-dim); max-width: 62ch; }
+.subpage__meta {
+  display: flex; flex-wrap: wrap; gap: 10px 28px;
+  margin: 40px 0 0; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  font-size: 0.8rem; color: var(--ink-dim);
+}
+.subpage__meta b { display: block; color: var(--ink); font-weight: 400; margin-top: 4px; }
+
+.prose { max-width: 68ch; margin: 0 auto; padding: clamp(56px, 8vw, 96px) clamp(20px, 6vw, 96px); }
+.prose h2 {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.4;
+  margin: 64px 0 20px; scroll-margin-top: 90px;
+}
+.prose h2:first-child { margin-top: 0; }
+.prose h3 { font-size: 1.05rem; font-weight: 500; margin: 36px 0 12px; color: var(--gold); }
+.prose p { margin: 0 0 18px; line-height: 2.05; }
+.prose ul { margin: 0 0 18px; padding-left: 1.15em; }
+.prose li { margin-bottom: 10px; line-height: 1.95; }
+.prose a { color: var(--gold); }
+
+/* before / after process contrast */
+.flow { display: grid; gap: 18px; margin: 28px 0 34px; }
+@media (min-width: 760px) { .flow { grid-template-columns: 1fr 1fr; gap: 22px; } }
+.flow__col { border: 1px solid var(--line); padding: 24px 22px; background: var(--bg-2); }
+.flow__col h4 { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-dim); font-weight: 400; margin-bottom: 16px; }
+.flow__col--after { border-color: var(--gold-soft); }
+.flow__col--after h4 { color: var(--gold); }
+.flow__step { display: flex; gap: 12px; align-items: baseline; margin-bottom: 12px; font-size: 0.92rem; line-height: 1.7; }
+.flow__step i { flex: none; font-style: normal; font-size: 0.7rem; color: var(--ink-dim); min-width: 1.6em; }
+
+.subpage__figure { margin: 40px 0; }
+.subpage__figure img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+.subpage__figure figcaption { margin-top: 12px; font-size: 0.78rem; color: var(--ink-dim); }
+
+.subpage__cta { text-align: center; padding: clamp(56px, 9vw, 110px) 20px; border-top: 1px solid var(--line); }
+.subpage__cta p { color: var(--ink-dim); margin-bottom: 22px; }
+
+/* ═══════════ LANGUAGE HINT (replaces the old auto-redirect) ═══════════ */
+.lang-hint {
+  position: fixed; z-index: 500;
+  left: 50%; bottom: 24px; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 16px;
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 12px 14px 12px 18px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  font-size: 0.8rem; color: var(--ink-dim);
+}
+.lang-hint a { color: var(--gold); text-decoration: none; white-space: nowrap; }
+.lang-hint a:hover { text-decoration: underline; }
+.lang-hint button {
+  flex: none; width: 26px; height: 26px;
+  background: none; border: 0; cursor: pointer;
+  color: var(--ink-dim); font-size: 1.1rem; line-height: 1;
+}
+.lang-hint button:hover { color: var(--ink); }
+@media (max-width: 520px) {
+  .lang-hint { flex-wrap: wrap; gap: 8px 12px; font-size: 0.75rem; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }

@@ -9,24 +9,36 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 
 /* ══════════════════════════════════════════════
    i18n — 中 (/) and EN (/en/) are separate static pages
-   (crawlable + hreflang). The nav toggle is a plain link;
-   we remember the visitor's choice and redirect first-time
-   visitors whose browser prefers English.
+   (crawlable + hreflang). The nav toggle is a plain link.
+
+   We deliberately do NOT auto-redirect on navigator.language:
+   Googlebot renders with en-US and no localStorage, so it would
+   be bounced off "/" — our canonical, x-default and priority-1.0
+   sitemap URL — onto the English page. Google advises against
+   redirecting on inferred language for exactly this reason.
+   First-time English speakers get a dismissible hint instead.
    ══════════════════════════════════════════════ */
 const I18N_KEY = "ht-lang";
 const PAGE_LANG = document.documentElement.lang.toLowerCase().startsWith("en") ? "en" : "zh";
 document.documentElement.dataset.lang = PAGE_LANG;
+localStorage.setItem(I18N_KEY, PAGE_LANG);
 
-let langRedirected = false;
-if (PAGE_LANG === "zh") {
-  const stored = localStorage.getItem(I18N_KEY);
+if (PAGE_LANG === "zh" && !localStorage.getItem("ht-lang-hint")) {
   const browserEn = navigator.language && navigator.language.toLowerCase().startsWith("en");
-  if (stored === "en" || (!stored && browserEn)) {
-    langRedirected = true;
-    location.replace("en/index.html");
+  if (browserEn) {
+    const hint = document.createElement("div");
+    hint.className = "lang-hint";
+    hint.innerHTML =
+      '<span>This site is also available in English.</span>' +
+      '<a href="/en/">View in English &nearr;</a>' +
+      '<button type="button" aria-label="Dismiss">&times;</button>';
+    hint.querySelector("button").addEventListener("click", () => {
+      localStorage.setItem("ht-lang-hint", "dismissed");
+      hint.remove();
+    });
+    document.body.appendChild(hint);
   }
 }
-if (!langRedirected) localStorage.setItem(I18N_KEY, PAGE_LANG);
 
 /* ── Lenis smooth scroll ── */
 let lenis = null;
@@ -73,8 +85,10 @@ function heroIntro() {
     .from(".nav", { y: -40, opacity: 0, duration: 0.9 }, "-=0.9");
 }
 
-if (reduceMotion) {
-  preloader.style.display = "none";
+// Sub-pages (case studies, service pages) have no preloader and no .hero —
+// fall back to simply revealing anything the pre-set above hid.
+if (reduceMotion || !preloader) {
+  if (preloader) preloader.style.display = "none";
   gsap.set("[data-split], .anim-line > span", { yPercent: 0 });
 } else {
   const counter = { v: 0 };
@@ -134,7 +148,7 @@ function splitManifesto() {
   });
   manifestoST = tween.scrollTrigger;
 }
-splitManifesto();
+if (manifesto) splitManifesto();
 
 /* ── generic section-head + service reveals ── */
 document.querySelectorAll(".section-head, .identity__head").forEach((el) => {
@@ -160,7 +174,9 @@ const idTrack = document.getElementById("identityTrack");
 function idDistance() {
   return Math.max(0, idTrack.scrollWidth - window.innerWidth);
 }
-if (!reduceMotion && window.innerWidth > 720) {
+if (!idTrack) {
+  // no identity strip on this page — nothing to pin
+} else if (!reduceMotion && window.innerWidth > 720) {
   gsap.to(idTrack, {
     x: () => -idDistance(),
     ease: "none",
@@ -180,8 +196,13 @@ if (!reduceMotion && window.innerWidth > 720) {
 }
 
 /* ── stats counters ── */
+// The real figure is server-rendered so crawlers and LLMs can read it without
+// running the animation; we zero it here, before first paint, so the count-up
+// still starts from 0 without the value visibly flashing.
 document.querySelectorAll(".stat strong").forEach((el) => {
   const target = +el.dataset.count;
+  if (reduceMotion) return;            // leave the rendered value in place
+  el.textContent = "0";
   const obj = { v: 0 };
   ScrollTrigger.create({
     trigger: el,
