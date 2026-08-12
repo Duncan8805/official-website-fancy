@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="../assets/logo-icon.png?v=20260724">
-  <link rel="apple-touch-icon" href="../assets/logo-icon.png?v=20260724">
+  <link rel="icon" type="image/png" href="/assets/logo-icon.png?v=20260812">
+  <link rel="apple-touch-icon" href="/assets/logo-icon.png?v=20260812">
   <title data-en="Jetron Information — One Brand Aesthetic, Digital &amp; Physical">Jetron Information — One Brand Aesthetic, Digital &amp; Physical</title>
   <meta name="description" content="Website development, ERP systems, UI/UX design and visual identity — crafting a brand experience that stays perfectly consistent online and off." data-en="Website development, ERP systems, UI/UX design and visual identity — crafting a brand experience that stays perfectly consistent online and off.">
   <link rel="canonical" href="https://jetron-information.com/en/">
@@ -16,43 +16,65 @@
   <meta property="og:title" content="Jetron Information — One Brand Aesthetic, Digital &amp; Physical">
   <meta property="og:description" content="Website development, ERP systems, UI/UX design and visual identity — crafting a brand experience that stays perfectly consistent online and off.">
   <meta property="og:url" content="https://jetron-information.com/en/">
-  <meta property="og:image" content="https://jetron-information.com/assets/logo.png">
-  <meta property="og:image:width" content="2048">
-  <meta property="og:image:height" content="2048">
+  <meta property="og:image" content="https://jetron-information.com/assets/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="杰辰資訊 Jetron Information">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="zh_TW">
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Jetron Information — One Brand Aesthetic, Digital &amp; Physical">
   <meta name="twitter:description" content="Website development, ERP systems, UI/UX design and visual identity — crafting a brand experience that stays perfectly consistent online and off.">
-  <meta name="twitter:image" content="https://jetron-information.com/assets/logo.png">
+  <meta name="twitter:image" content="https://jetron-information.com/assets/og-cover.jpg">
 
-  <!-- 結構化資料：讓 Google 認識這家公司 -->
+  <!-- 結構化資料：讓 Google 認識這家公司
+       型別為 Organization 而非 ProfessionalService：後者繼承 LocalBusiness，
+       語意上代表「有客戶可造訪的實體據點」，目前並無登記地址或對外據點，
+       宣告了反而是不實訊號。共用 @id 讓中英兩頁指向同一個實體。 -->
   <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Jetron Information",
-  "alternateName": "杰辰資訊",
+  "@type": "Organization",
+  "@id": "https://jetron-information.com/#organization",
+  "name": "杰辰資訊",
+  "alternateName": "Jetron Information",
   "url": "https://jetron-information.com/",
   "logo": "https://jetron-information.com/assets/logo.png",
-  "image": "https://jetron-information.com/assets/logo.png",
+  "image": "https://jetron-information.com/assets/og-cover.jpg",
   "email": "nicholas_jie98@outlook.com",
   "description": "Website development, ERP systems, UI/UX design and visual identity — crafting a brand experience that stays perfectly consistent online and off.",
-  "areaServed": "TW",
+  "areaServed": {
+    "@type": "Country",
+    "name": "TW"
+  },
   "knowsAbout": [
     "網站設計",
     "ERP 系統開發",
     "UI/UX 設計",
     "品牌視覺識別"
   ],
-  "sameAs": []
+  "sameAs": [
+    "https://github.com/duncan8805"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "nicholas_jie98@outlook.com",
+    "areaServed": "TW",
+    "availableLanguage": [
+      "zh-Hant",
+      "en"
+    ]
+  }
 }</script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;family=Noto+Serif+TC:wght@300;400;600;700&amp;family=Noto+Sans+TC:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=20260724">
+  <!-- Self-hosted subset fonts (see tools/build-fonts.py). Preload only the
+       three faces that render above the fold; the italic loads on demand. -->
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-sans-tc.woff2?v=20260812" crossorigin="">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-serif-tc.woff2?v=20260812" crossorigin="">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/fraunces.woff2?v=20260812" crossorigin="">
+  <link rel="stylesheet" href="/css/style.css?v=20260812">
 </head>
 <body>
 
@@ -74,7 +96,7 @@
   <!-- ══════════ NAV ══════════ -->
   <header class="nav" id="nav">
     <a href="#top" class="nav__logo" data-hover="">
-      <img class="nav__logo-mark" src="../assets/logo-icon.png?v=20260724" alt="杰辰資訊 Jetron">
+      <img class="nav__logo-mark" src="/assets/logo-icon.png?v=20260812" width="256" height="256" alt="杰辰資訊 Jetron">
       <span class="nav__logo-text">杰辰資訊 <em>Jetron</em></span>
     </a>
     <nav class="nav__links">
@@ -83,7 +105,7 @@
       <a href="#studio" data-hover="" data-en="Studio">Studio</a>
       <a href="#process" data-hover="" data-en="Process">Process</a>
       <a href="#contact" class="nav__cta" data-hover=""><span data-en="Free Consult">Free Consult</span></a>
-      <a class="nav__lang" id="langToggle" href="../index.html" data-hover="" aria-label="切換至中文">
+      <a class="nav__lang" id="langToggle" href="/" data-hover="" aria-label="切換至中文">
         <span class="nav__lang-zh">中</span><i>/</i><span class="nav__lang-en">EN</span>
       </a>
     </nav>
@@ -142,9 +164,13 @@
             <h3 class="service__title"><span data-en="Web Design">Web Design</span><em>Web Design</em></h3>
             <p class="service__desc" data-en="A website built to win business. Polished on mobile and desktop — customers find you, understand you, and get in touch.">A website built to win business. Polished on mobile and desktop — customers find you, understand you, and get in touch.</p>
             <ul class="service__tags"><li data-en="Brand Sites">Brand Sites</li><li>RWD</li><li data-en="Motion">Motion</li><li>SEO</li></ul>
+            <p class="service__more"><a href="/en/services/web/" data-hover="" data-en="How we build websites ↗">How we build websites ↗</a></p>
           </div>
           <a class="service__visual service__visual--1 service__visual--live" href="https://duncan8805.github.io/chang-fu-rice/" target="_blank" rel="noopener" data-hover="" aria-label="查看實際案例：長富稻穀乾燥中心">
-            <img src="../assets/case-chang-fu-rice.jpg" alt="長富稻穀乾燥中心官網截圖" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="/assets/case-chang-fu-rice-640.webp 640w, /assets/case-chang-fu-rice-880.webp 880w" sizes="(max-width: 700px) 100vw, 631px">
+              <img src="/assets/case-chang-fu-rice-640.jpg" srcset="/assets/case-chang-fu-rice-640.jpg 640w, /assets/case-chang-fu-rice.jpg 880w" sizes="(max-width: 700px) 100vw, 631px" width="640" height="480" alt="Screenshot of the Chang-Fu Rice Drying Center website" data-en-alt="Screenshot of the Chang-Fu Rice Drying Center website" loading="lazy" decoding="async">
+            </picture>
             <span class="service__visual-caption" data-en="Live case: Chang-Fu Rice Drying Center ">Live case: Chang-Fu Rice Drying Center <i>↗</i></span>
           </a>
         </article>
@@ -155,9 +181,13 @@
             <h3 class="service__title"><span data-en="ERP Systems">ERP Systems</span><em>ERP System</em></h3>
             <p class="service__desc" data-en="Inventory, orders, finance and HR in a single system. Automate the repetitive work and keep every number clear at a glance.">Inventory, orders, finance and HR in a single system. Automate the repetitive work and keep every number clear at a glance.</p>
             <ul class="service__tags"><li>ERP</li><li data-en="Automation">Automation</li><li data-en="Custom Modules">Custom Modules</li><li data-en="Data Integration">Data Integration</li></ul>
+            <p class="service__more"><a href="/en/services/erp/" data-hover="" data-en="How we build ERP systems ↗">How we build ERP systems ↗</a></p>
           </div>
           <div class="service__visual service__visual--2 service__visual--live">
-            <img src="../assets/case-chang-fu-erp.jpg" alt="長富稻穀廠過磅結算系統畫面" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="/assets/case-chang-fu-erp-640.webp 640w, /assets/case-chang-fu-erp-880.webp 880w" sizes="(max-width: 700px) 100vw, 631px">
+              <img src="/assets/case-chang-fu-erp-640.jpg" srcset="/assets/case-chang-fu-erp-640.jpg 640w, /assets/case-chang-fu-erp.jpg 880w" sizes="(max-width: 700px) 100vw, 631px" width="640" height="480" alt="Chang-Fu Rice mill weighing and settlement system screen" data-en-alt="Chang-Fu Rice mill weighing and settlement system screen" loading="lazy" decoding="async">
+            </picture>
             <span class="service__visual-caption" data-en="Live case: Chang-Fu Rice — Weighing &amp; Settlement System">Live case: Chang-Fu Rice — Weighing &amp; Settlement System</span>
           </div>
         </article>
@@ -168,9 +198,13 @@
             <h3 class="service__title"><span data-en="UI/UX Design">UI/UX Design</span><em>Experience Design</em></h3>
             <p class="service__desc" data-en="How usable an interface is decides whether customers stay. We validate with research and prototypes so every screen feels intuitive.">How usable an interface is decides whether customers stay. We validate with research and prototypes so every screen feels intuitive.</p>
             <ul class="service__tags"><li data-en="User Research">User Research</li><li>Wireframe</li><li>Prototype</li><li data-en="Design System">Design System</li></ul>
+            <p class="service__more"><a href="/en/services/uiux/" data-hover="" data-en="How we design interfaces ↗">How we design interfaces ↗</a></p>
           </div>
           <div class="service__visual service__visual--3 service__visual--live">
-            <img src="../assets/case-uiux.jpg" alt="UI/UX 設計流程：線框稿、高保真原型與設計系統" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="/assets/case-uiux-640.webp 640w, /assets/case-uiux-880.webp 880w" sizes="(max-width: 700px) 100vw, 631px">
+              <img src="/assets/case-uiux-640.jpg" srcset="/assets/case-uiux-640.jpg 640w, /assets/case-uiux.jpg 880w" sizes="(max-width: 700px) 100vw, 631px" width="640" height="480" alt="UI/UX design process: wireframes, high-fidelity prototype and design system" data-en-alt="UI/UX design process: wireframes, high-fidelity prototype and design system" loading="lazy" decoding="async">
+            </picture>
             <span class="service__visual-caption" data-en="Wireframe → High-fidelity prototype → Design system">Wireframe → High-fidelity prototype → Design system</span>
           </div>
         </article>
@@ -181,9 +215,13 @@
             <h3 class="service__title"><span data-en="Visual Identity">Visual Identity</span><em>Visual Identity</em></h3>
             <p class="service__desc" data-en="Make your website, business card and signage look like one company. A dedicated designer unifies your visuals — online and offline, in one pass.">Make your website, business card and signage look like one company. A dedicated designer unifies your visuals — online and offline, in one pass.</p>
             <ul class="service__tags"><li data-en="VI System">VI System</li><li data-en="Logo Refinement">Logo Refinement</li><li data-en="Cards &amp; Collateral">Cards &amp; Collateral</li><li data-en="Brand Guidelines">Brand Guidelines</li></ul>
+            <p class="service__more"><a href="/en/services/identity/" data-hover="" data-en="How we build brand identity ↗">How we build brand identity ↗</a></p>
           </div>
           <div class="service__visual service__visual--4 service__visual--live">
-            <img src="../assets/case-vi-identity.jpg" alt="品牌識別設計提案：標誌、名片、型錄與數位介面應用" loading="lazy">
+            <picture>
+              <source type="image/webp" srcset="/assets/case-vi-identity-640.webp 640w, /assets/case-vi-identity-880.webp 880w" sizes="(max-width: 700px) 100vw, 631px">
+              <img src="/assets/case-vi-identity-640.jpg" srcset="/assets/case-vi-identity-640.jpg 640w, /assets/case-vi-identity.jpg 880w" sizes="(max-width: 700px) 100vw, 631px" width="640" height="480" alt="Brand identity proposal: logo, business cards, catalogue and digital applications" data-en-alt="Brand identity proposal: logo, business cards, catalogue and digital applications" loading="lazy" decoding="async">
+            </picture>
             <span class="service__visual-caption" data-en="Brand identity design · digital &amp; physical applications">Brand identity design · digital &amp; physical applications</span>
           </div>
         </article>
@@ -231,10 +269,10 @@
 
     <!-- ══════════ STATS ══════════ -->
     <section class="stats">
-      <div class="stat"><strong data-count="10">0</strong><span data-en="+ years of core-team experience">+ years of core-team experience</span></div>
-      <div class="stat"><strong data-count="4">0</strong><span data-en=" integrated services, end to end"> integrated services, end to end</span></div>
-      <div class="stat"><strong data-count="100">0</strong><span data-en="% online-to-offline visual consistency">% online-to-offline visual consistency</span></div>
-      <div class="stat"><strong data-count="1">0</strong><span data-en=" point of contact, start to finish"> point of contact, start to finish</span></div>
+      <div class="stat"><strong data-count="6">6</strong><span data-en=" core team members"> core team members</span></div>
+      <div class="stat"><strong data-count="4">4</strong><span data-en=" integrated services, end to end"> integrated services, end to end</span></div>
+      <div class="stat"><strong data-count="100">100</strong><span data-en="% online-to-offline visual consistency">% online-to-offline visual consistency</span></div>
+      <div class="stat"><strong data-count="1">1</strong><span data-en=" point of contact, start to finish"> point of contact, start to finish</span></div>
     </section>
 
     <!-- ══════════ STUDIO ══════════ -->
@@ -246,7 +284,7 @@
       <div class="studio__grid">
         <div class="studio__statement">
           <p class="studio__lead" data-en-html="We're a lean digital team —<br/>small enough that someone owns every decision,<br/>big enough to carry your entire brand.">We're a lean digital team —<br>small enough that someone owns every decision,<br>big enough to carry your entire brand.</p>
-          <p class="studio__body" data-en="Each core member brings 10+ years in their field — from business strategy and systems engineering to interface design — working hand in hand with a dedicated visual-identity designer. No more relaying messages between a web agency, a systems vendor and a design studio: with us, there is always a single point of contact.">Each core member brings 10+ years in their field — from business strategy and systems engineering to interface design — working hand in hand with a dedicated visual-identity designer. No more relaying messages between a web agency, a systems vendor and a design studio: with us, there is always a single point of contact.</p>
+          <p class="studio__body" data-en="Our core team is one business lead, one dedicated visual-identity designer and four full-stack engineers — and those engineers are also your project contact, so requirements never get relayed through a middle layer. From business strategy and systems engineering to interface design: no more relaying messages between a web agency, a systems vendor and a design studio. With us, there is always a single point of contact.">Our core team is one business lead, one dedicated visual-identity designer and four full-stack engineers — and those engineers are also your project contact, so requirements never get relayed through a middle layer. From business strategy and systems engineering to interface design: no more relaying messages between a web agency, a systems vendor and a design studio. With us, there is always a single point of contact.</p>
         </div>
         <div class="studio__disciplines">
           <div class="disc" data-hover-lg="">
@@ -344,7 +382,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-  <script src="../js/main.js?v=20260724"></script>
+  <script src="/js/main.js?v=20260812"></script>
 
 
 </body></html>

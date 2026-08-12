@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/logo-icon.png?v=20260812" />
+  <link rel="apple-touch-icon" href="/assets/logo-icon.png?v=20260812" />
+  <title data-en="ERP System Development — Replace the paper process, not just digitise it | Jetron">ERP 系統開發｜把紙本流程換掉，而不只是數位化 | 杰辰資訊</title>
+  <meta name="description" content="客製 ERP 系統開發：過磅、庫存、訂單、結算流程上線。從現場實際怎麼運作開始設計，讓同一筆資料只輸入一次。台灣在地團隊，附長富稻穀乾燥中心實例。" data-en="Custom ERP system development: weighing, inventory, orders and settlement. We design from how the work actually happens on site, so the same figure is entered once. Taiwan-based team, with a worked example from Chang-Fu Rice Drying Center." />
+  <link rel="canonical" href="https://jetron-information.com/services/erp/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/erp/" />
+  <link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/erp/" />
+  <link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/erp/" />
+
+  <!-- Open Graph（LINE / Facebook / IG 分享預覽） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="杰辰資訊 Jetron Information" />
+  <meta property="og:title" content="ERP 系統開發｜把紙本流程換掉，而不只是數位化" />
+  <meta property="og:description" content="客製 ERP 系統開發：過磅、庫存、訂單、結算流程上線。從現場實際怎麼運作開始設計，讓同一筆資料只輸入一次。" />
+  <meta property="og:url" content="https://jetron-information.com/services/erp/" />
+  <meta property="og:image" content="https://jetron-information.com/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="杰辰資訊 Jetron Information" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ERP 系統開發｜把紙本流程換掉，而不只是數位化" />
+  <meta name="twitter:description" content="客製 ERP 系統開發：過磅、庫存、訂單、結算流程上線。從現場實際怎麼運作開始設計，讓同一筆資料只輸入一次。" />
+  <meta name="twitter:image" content="https://jetron-information.com/assets/og-cover.jpg" />
+
+  <!-- 結構化資料：Service，provider 指向首頁的同一個 @id -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "ERP 系統開發",
+    "alternateName": "ERP System Development",
+    "serviceType": "ERP 系統開發",
+    "description": "客製 ERP 系統開發：過磅、庫存、訂單、結算流程上線。從現場實際怎麼運作開始設計，讓同一筆資料只輸入一次。",
+    "url": "https://jetron-information.com/services/erp/",
+    "inLanguage": "zh-Hant",
+    "provider": { "@id": "https://jetron-information.com/#organization" },
+    "areaServed": { "@type": "Country", "name": "TW" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "ERP 系統開發項目",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "現場資料輸入系統（平板／行動裝置）" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "結算與帳務流程系統" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "客製模組開發" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "既有資料整合" } }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-sans-tc.woff2?v=20260812" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-serif-tc.woff2?v=20260812" crossorigin />
+  <link rel="stylesheet" href="/css/style.css?v=20260812" />
+</head>
+<body>
+
+  <!-- noise texture overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav" id="nav">
+    <a href="/" class="nav__logo" data-hover>
+      <img class="nav__logo-mark" src="/assets/logo-icon.png?v=20260812" width="256" height="256" alt="杰辰資訊 Jetron" />
+      <span class="nav__logo-text">杰辰資訊 <em>Jetron</em></span>
+    </a>
+    <nav class="nav__links">
+      <a href="/#services" data-hover data-en="Services">服務項目</a>
+      <a href="/#identity" data-hover data-en="Identity">品牌統籌</a>
+      <a href="/#studio" data-hover data-en="Studio">工作室</a>
+      <a href="/#contact" class="nav__cta" data-hover><span data-en="Free Consult">免費諮詢</span></a>
+      <a class="nav__lang" id="langToggle" href="/en/services/erp/" data-hover aria-label="Switch to English">
+        <span class="nav__lang-zh">中</span><i>/</i><span class="nav__lang-en">EN</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <header class="subpage">
+      <p class="subpage__crumb"><a href="/" data-en="Home">首頁</a> / <a href="/#services" data-en="Services">服務項目</a> / <span data-en="ERP System Development">ERP 系統開發</span></p>
+      <h1 class="subpage__title" data-en="ERP system development: replace the paper process, don't just digitise it">ERP 系統開發：把紙本流程換掉，而不只是數位化</h1>
+      <p class="subpage__lede" data-en="Most companies that come to us are not asking for digital transformation. They are asking for one specific piece of friction to stop happening — usually a number that gets written down once and then typed in again somewhere else.">多數來找我們的公司，不是來談數位轉型的。他們想解決的是某一個具體的麻煩——通常是某個數字先被寫下來一次，之後又得在別的地方重新輸入一次。</p>
+
+      <div class="subpage__meta">
+        <span><span data-en="Service">服務</span><b data-en="Custom ERP system development">客製 ERP 系統開發</b></span>
+        <span><span data-en="Typical scope">常見範圍</span><b data-en="On-site data entry · settlement · inventory · orders">現場輸入・結算・庫存・訂單</b></span>
+        <span><span data-en="Area served">服務範圍</span><b data-en="Taiwan">台灣</b></span>
+      </div>
+    </header>
+
+    <article class="prose">
+
+      <h2 id="problem" data-en="The problem is rarely &quot;we have no system&quot;">問題通常不是「我們沒有系統」</h2>
+      <p data-en="It is that the system stops where the real work starts. Data gets captured on paper at the point it actually happens — on the weighbridge, in the warehouse, at the counter — and only becomes data later, when someone types it in. Everything between those two moments is where errors, disputes and wasted hours live.">而是系統斷在真正工作發生的地方。資料在實際發生的當下被記在紙上——地磅邊、倉庫裡、櫃檯前——要等到有人輸入，它才變成資料。錯誤、爭議和被吃掉的工時，全都住在這兩個時間點中間。</p>
+      <p data-en-html="So the question we start with is not &quot;which modules do you need&quot;. It is: <strong>where does the same figure get written down more than once?</strong>">所以我們的第一個問題不是「你需要哪些模組」，而是：<strong>同一個數字，在你的流程裡被寫下幾次？</strong></p>
+
+      <h2 id="approach" data-en="How we work">我們怎麼做</h2>
+      <h3 data-en="We start at the point of capture">從資料產生的那一刻開始</h3>
+      <p data-en="Not from an org chart, and not from a module list. If the data is created standing next to a truck, the interface has to work standing next to a truck — on a tablet, with gloves on, in daylight.">不是從組織圖開始，也不是從模組清單開始。如果資料是站在卡車旁邊產生的，那介面就必須能站在卡車旁邊使用——用平板、戴著手套、在大太陽下。</p>
+
+      <h3 data-en="One entry, many uses">輸入一次，多處使用</h3>
+      <p data-en="Once a figure exists as data, settlement, history and analysis are all just different questions asked of the same record. That is the whole economic argument for a system: not that it is modern, but that the re-typing stops.">一個數字只要以資料的形式存在，結算、查詢、分析就只是對同一筆紀錄問不同的問題。這才是導入系統真正的經濟理由：不是因為它比較現代，而是因為重複輸入停止了。</p>
+
+      <h3 data-en="Built to fit, not configured to fit">客製，而不是硬套</h3>
+      <p data-en="Off-the-shelf ERP asks you to change how you work so the software makes sense. For a mid-sized operation with one unusual process at its core, that trade is usually a bad one. We build around the process that makes your business yours.">套裝 ERP 要求你改變工作方式，好讓軟體說得通。對於核心就有一個特殊流程的中小型營運來說，這筆交易通常不划算。我們是繞著那個讓你之所以是你的流程來開發。</p>
+
+      <h2 id="example" data-en="A worked example: Chang-Fu Rice Drying Center">實例：長富稻穀乾燥中心</h2>
+      <p data-en="Chang-Fu Rice Drying Center takes in harvested grain, dries it, and settles payment with each farmer based on what comes off the weighbridge. Every one of those numbers — the truck, the load, the weight in and out — was written down on paper.">長富稻穀乾燥中心的業務是收進稻穀、烘乾，並依過磅結果與每位農民結算。而這些數字——車次、批次、進出場重量——過去全部寫在紙本上。</p>
+      <p data-en="Paper is not a problem on its own. It becomes a problem when the same figure has to be copied again to settle payment, checked again when someone disputes it, and typed in a third time if anyone wants to know how prices moved across the season.">紙本本身不是問題。問題出在同一個數字要再抄一次才能結算、有爭議時要再翻一次才能查、而如果想知道整季價格怎麼變動，還得再輸入第三次。</p>
+      <p data-en="We built a weighing settlement system entered on a tablet at the weighbridge itself. Because the figure is captured as data from the start, settlement reads the same record — and price analysis stopped being a separate re-typing exercise and became something the system can answer.">我們建置了一套在地磅現場以平板輸入的過磅結算系統。因為數字一開始就是資料，結算直接沿用同一筆；價格分析也不再是另一次重新輸入的工作，而是系統可以直接回答的事。</p>
+
+      <figure class="subpage__figure">
+        <img src="/assets/case-chang-fu-erp-640.jpg"
+             srcset="/assets/case-chang-fu-erp-640.jpg 640w, /assets/case-chang-fu-erp.jpg 880w"
+             sizes="(max-width: 800px) 100vw, 680px"
+             width="640" height="480"
+             alt="長富稻穀廠過磅結算系統畫面"
+             data-en-alt="Chang-Fu Rice mill weighing and settlement system screen"
+             loading="lazy" decoding="async" />
+        <figcaption data-en="Chang-Fu Rice Drying Center — weighing &amp; settlement system">長富稻穀廠・過磅結算系統</figcaption>
+      </figure>
+
+      <div class="flow">
+        <div class="flow__col">
+          <h4 data-en="Before">導入前</h4>
+          <p class="flow__step"><i>01</i><span data-en="Weighing recorded by hand on a paper form">過磅時以紙本手寫記錄</span></p>
+          <p class="flow__step"><i>02</i><span data-en="Figures copied again for settlement">結算時再抄寫一次數字</span></p>
+          <p class="flow__step"><i>03</i><span data-en="Disputes resolved by finding the original slip">有爭議時翻找原始單據</span></p>
+          <p class="flow__step"><i>04</i><span data-en="Price analysis means typing it all in again">要做價格分析得再重新輸入</span></p>
+        </div>
+        <div class="flow__col flow__col--after">
+          <h4 data-en="After">導入後</h4>
+          <p class="flow__step"><i>01</i><span data-en="Weighing entered on a tablet where it happens">過磅現場以平板直接輸入</span></p>
+          <p class="flow__step"><i>02</i><span data-en="Settlement reads the same record">結算沿用同一筆資料</span></p>
+          <p class="flow__step"><i>03</i><span data-en="History is searchable, no paper hunt">紀錄可查詢，不需翻單據</span></p>
+          <p class="flow__step"><i>04</i><span data-en="Price analysis is a query, not re-entry">價格分析是查詢，不是重新輸入</span></p>
+        </div>
+      </div>
+      <p data-en="We have deliberately not put percentages on this. Chang-Fu did not run a stopwatch on the paper process beforehand, so any number we printed here would be invented. The honest claim is the structural one: the same figure is now entered once instead of three times.">這裡我們刻意不放百分比。長富在導入前並沒有針對紙本流程做過計時，任何我們寫在這裡的數字都會是編出來的。能誠實宣稱的是結構上的改變：同一個數字從輸入三次變成輸入一次。</p>
+      <p data-en-html="We also built this client's public website — that side of the project is described on the <a href=&quot;/en/services/web/&quot;>website development</a> page.">我們同時也為這位客戶建置了對外官網，那部分寫在 <a href="/services/web/">官網建置</a>頁。</p>
+
+      <h2 id="scope" data-en="What an engagement usually covers">一個專案通常包含什麼</h2>
+      <ul>
+        <li data-en="Walking your actual process on site, before any spec is written">在寫任何規格之前，先到現場走一遍你真正的流程</li>
+        <li data-en="On-site data entry built for the device and conditions it will be used in">依實際使用的裝置與環境設計的現場輸入介面</li>
+        <li data-en="Settlement, inventory, order or accounting flows built on that same record">建立在同一筆紀錄上的結算、庫存、訂單或帳務流程</li>
+        <li data-en="Integration with the spreadsheets or systems you already depend on">與你目前仰賴的試算表或既有系統整合</li>
+        <li data-en="Handover, training, and support after go-live — not a drop-and-run">上線後的交接、教育訓練與陪跑，不是交件走人</li>
+      </ul>
+
+      <h2 id="fit" data-en="Who this is a good fit for">什麼情況適合找我們</h2>
+      <p data-en="If your operation has a core process that no off-the-shelf product quite covers, and the cost of that gap is currently being paid in re-typing, disputes and evenings — that is the gap we build for. Our full-stack engineers each double as the project contact, so you are not relaying requirements through an account manager who then relays them to a developer.">如果你的營運中有一個套裝軟體剛好蓋不到的核心流程，而那個缺口的代價目前是用重複輸入、爭議和加班在支付——那正是我們開發的目標。我們的全端工程師同時就是專案窗口，你不需要把需求轉述給業務、業務再轉述給工程師。</p>
+      <p data-en="If what you need is a standard accounting package, we will say so. That is a cheaper answer than anything we would build.">如果你需要的其實是一套標準會計軟體，我們會直說。那會是比我們開發任何東西都便宜的答案。</p>
+
+    </article>
+
+    <section class="subpage__cta">
+      <p data-en="Have a number that gets written down more than once?">有哪個數字，在你的流程裡被寫了不只一次嗎？</p>
+      <a href="/#contact" class="btn btn--solid" data-hover><span data-en="Free Consult">免費諮詢</span></a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__left">
+      <span class="footer__logo">杰辰資訊 Jetron</span>
+      <span class="footer__tag">Digital &times; Physical Brand Experience</span>
+    </div>
+    <div class="footer__right">
+      <a href="/#services" data-hover data-en="Services">服務項目</a>
+      <a href="/#identity" data-hover data-en="Identity">品牌統籌</a>
+      <a href="/#contact" data-hover data-en="Contact">聯絡我們</a>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 杰辰資訊 Jetron Information</span>
+      <span>Designed &amp; built in Taiwan</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="/js/main.js?v=20260812"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://jetron-information.com/</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/" />
@@ -12,11 +12,83 @@
   </url>
   <url>
     <loc>https://jetron-information.com/en/</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/services/erp/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/erp/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/erp/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/erp/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/en/services/erp/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/erp/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/erp/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/erp/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/services/identity/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/identity/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/identity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/identity/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/en/services/identity/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/identity/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/identity/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/identity/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/services/uiux/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/uiux/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/uiux/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/uiux/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/en/services/uiux/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/uiux/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/uiux/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/uiux/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/services/web/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/web/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/web/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/web/" />
+  </url>
+  <url>
+    <loc>https://jetron-information.com/en/services/web/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/web/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/web/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/web/" />
   </url>
 </urlset>

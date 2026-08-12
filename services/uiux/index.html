@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/assets/logo-icon.png?v=20260812" />
+  <link rel="apple-touch-icon" href="/assets/logo-icon.png?v=20260812" />
+  <title data-en="UI/UX Design — The cost of an interface is paid every day | Jetron">UI/UX 設計｜介面的成本，是每天被重複支付的 | 杰辰資訊</title>
+  <meta name="description" content="UI/UX 設計：使用者研究、線框稿、原型驗證與設計系統。從實際使用情境出發，讓每天要用幾百次的畫面少一次點擊，也讓客戶介面留得住人。台灣在地團隊。" data-en="UI/UX design: user research, wireframes, prototype validation and design systems. We start from how the screen is actually used, so an interface used hundreds of times a day costs one fewer tap — and a customer-facing one keeps people there. Taiwan-based team." />
+  <link rel="canonical" href="https://jetron-information.com/services/uiux/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://jetron-information.com/services/uiux/" />
+  <link rel="alternate" hreflang="en" href="https://jetron-information.com/en/services/uiux/" />
+  <link rel="alternate" hreflang="x-default" href="https://jetron-information.com/services/uiux/" />
+
+  <!-- Open Graph（LINE / Facebook / IG 分享預覽） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="杰辰資訊 Jetron Information" />
+  <meta property="og:title" content="UI/UX 設計｜介面的成本，是每天被重複支付的" />
+  <meta property="og:description" content="使用者研究、線框稿、原型驗證與設計系統。從實際使用情境出發，讓每天要用幾百次的畫面少一次點擊，也讓客戶介面留得住人。" />
+  <meta property="og:url" content="https://jetron-information.com/services/uiux/" />
+  <meta property="og:image" content="https://jetron-information.com/assets/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="杰辰資訊 Jetron Information" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UI/UX 設計｜介面的成本，是每天被重複支付的" />
+  <meta name="twitter:description" content="使用者研究、線框稿、原型驗證與設計系統。從實際使用情境出發，讓每天要用幾百次的畫面少一次點擊，也讓客戶介面留得住人。" />
+  <meta name="twitter:image" content="https://jetron-information.com/assets/og-cover.jpg" />
+
+  <!-- 結構化資料：Service，provider 指向首頁的同一個 @id -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "UI/UX 設計",
+    "alternateName": "UI/UX Design",
+    "serviceType": "使用者介面與使用者經驗設計",
+    "description": "使用者研究、線框稿、原型驗證與設計系統。從實際使用情境出發，讓每天要用幾百次的畫面少一次點擊，也讓客戶介面留得住人。",
+    "url": "https://jetron-information.com/services/uiux/",
+    "inLanguage": "zh-Hant",
+    "provider": { "@id": "https://jetron-information.com/#organization" },
+    "areaServed": { "@type": "Country", "name": "TW" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "UI/UX 設計項目",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "使用者研究與使用情境訪查" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "線框稿與互動原型" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "高保真介面設計" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "設計系統與元件庫" } }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-sans-tc.woff2?v=20260812" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-serif-tc.woff2?v=20260812" crossorigin />
+  <link rel="stylesheet" href="/css/style.css?v=20260812" />
+</head>
+<body>
+
+  <!-- noise texture overlay -->
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- ══════════ NAV ══════════ -->
+  <header class="nav" id="nav">
+    <a href="/" class="nav__logo" data-hover>
+      <img class="nav__logo-mark" src="/assets/logo-icon.png?v=20260812" width="256" height="256" alt="杰辰資訊 Jetron" />
+      <span class="nav__logo-text">杰辰資訊 <em>Jetron</em></span>
+    </a>
+    <nav class="nav__links">
+      <a href="/#services" data-hover data-en="Services">服務項目</a>
+      <a href="/#identity" data-hover data-en="Identity">品牌統籌</a>
+      <a href="/#studio" data-hover data-en="Studio">工作室</a>
+      <a href="/#contact" class="nav__cta" data-hover><span data-en="Free Consult">免費諮詢</span></a>
+      <a class="nav__lang" id="langToggle" href="/en/services/uiux/" data-hover aria-label="Switch to English">
+        <span class="nav__lang-zh">中</span><i>/</i><span class="nav__lang-en">EN</span>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <header class="subpage">
+      <p class="subpage__crumb"><a href="/" data-en="Home">首頁</a> / <a href="/#services" data-en="Services">服務項目</a> / <span data-en="UI/UX Design">UI/UX 設計</span></p>
+      <h1 class="subpage__title" data-en="UI/UX design: the cost of an interface is paid every day">UI/UX 設計：介面的成本，是每天被重複支付的</h1>
+      <p class="subpage__lede" data-en="Design is paid for once. A bad interface is paid for every day it stays in use — in taps, in mistakes, in the questions your staff keep having to answer.">設計費你付一次。不好用的介面，你在它服役的每一天都在付——用點擊付、用錯誤付、用你的員工反覆回答同樣問題的時間付。</p>
+
+      <div class="subpage__meta">
+        <span><span data-en="Service">服務</span><b data-en="UI/UX design">介面與使用經驗設計</b></span>
+        <span><span data-en="Typical scope">常見範圍</span><b data-en="Research · wireframes · prototype · design system">研究・線框稿・原型・設計系統</b></span>
+        <span><span data-en="Area served">服務範圍</span><b data-en="Taiwan">台灣</b></span>
+      </div>
+    </header>
+
+    <article class="prose">
+
+      <h2 id="why" data-en="Usability is not an impression, it is arithmetic">好不好用，不是印象問題，是算術問題</h2>
+
+      <h3 data-en="For an internal system, the unit is &quot;times per day&quot;">對內部系統，計價單位是「每天幾次」</h3>
+      <p data-en="If a data-entry screen is used two hundred times a day, one unnecessary tap is two hundred taps a day, five days a week, for as long as the system lives. Nobody writes that cost down anywhere, which is exactly why it never gets fixed.">如果一個輸入畫面每天要用兩百次，多一個沒必要的點擊就是每天多兩百次點擊、每週五天、持續到這套系統退役為止。沒有人會把這個成本記在任何帳上——這正是它永遠不會被修掉的原因。</p>
+      <p data-en="Worse than the taps are the mistakes. An interface that makes the wrong choice easy to hit will produce wrong data at a steady rate, and someone downstream will spend their afternoon reconciling it.">比點擊更糟的是錯誤。一個讓人容易按錯的介面，會以穩定的速率產生錯誤資料，然後下游有個人要花一整個下午對帳。</p>
+
+      <h3 data-en="For a customer-facing screen, the unit is &quot;whether they stay&quot;">對客戶介面，計價單位是「留不留」</h3>
+      <p data-en="A customer who cannot work out what to do next does not file a complaint. They leave, and you never learn that the screen was the reason. This is the same problem as brand inconsistency: the cost is real and the feedback never arrives.">一個搞不懂下一步該做什麼的客戶，不會跟你抱怨。他就是離開了，而你永遠不會知道原因出在那個畫面。這和品牌不一致是同一種問題：代價是真的，但回饋永遠不會送達。</p>
+
+      <h2 id="approach" data-en="How we work">我們怎麼做</h2>
+
+      <h3 data-en="We start from the situation, not the screen">從使用情境開始，不是從畫面開始</h3>
+      <p data-en="Who is using this, where are they standing, what else are they holding, how much time do they have, and what happens if they get it wrong? Those answers constrain the design far more than any style preference does. A screen used at a desk and a screen used outdoors in one hand are not the same screen.">誰在用、他站在哪裡、手上還拿著什麼、他有多少時間、按錯了會怎樣？這些答案對設計的約束，遠大於任何風格偏好。在辦公桌前用的畫面，和在戶外單手操作的畫面，不是同一個畫面。</p>
+
+      <h3 data-en="Wireframes and prototypes come before visual design">先用線框稿和原型驗證，再進視覺</h3>
+      <p data-en="It is much cheaper to find out that a flow does not work while it is still grey boxes. We validate the structure first — what goes where, what happens next — and only then decide what it looks like. Reversing that order is how projects end up beautiful and unusable.">在還是灰色方塊的階段發現流程行不通，成本低得多。我們先驗證結構——什麼放在哪裡、下一步會發生什麼——之後才決定它長什麼樣子。把這個順序顛倒過來，就是專案最後變得好看但不能用的原因。</p>
+
+      <h3 data-en="A design system, so screen twenty matches screen one">設計系統：讓第二十個畫面和第一個畫面一致</h3>
+      <p data-en="Most systems do not start out inconsistent. They drift, because screen twenty was built six months after screen one by someone working from memory. A component library and defined states stop that drift, and they make every screen after the first one faster to build.">多數系統不是一開始就不一致的。它們是慢慢走鐘的，因為第二十個畫面是在第一個畫面完成六個月後、由某個憑印象在做的人建出來的。元件庫與明確定義的狀態能阻止這種漂移，而且會讓第一個畫面之後的每一個都做得更快。</p>
+
+      <figure class="subpage__figure">
+        <img src="/assets/case-uiux-640.jpg"
+             srcset="/assets/case-uiux-640.jpg 640w, /assets/case-uiux.jpg 880w"
+             sizes="(max-width: 800px) 100vw, 680px"
+             width="640" height="480"
+             alt="UI/UX 設計流程：線框稿、高保真原型與設計系統"
+             data-en-alt="UI/UX design process: wireframes, high-fidelity prototype and design system"
+             loading="lazy" decoding="async" />
+        <figcaption data-en="Wireframe → high-fidelity prototype → design system">線框稿 → 高保真原型 → 設計系統</figcaption>
+      </figure>
+
+      <h2 id="example" data-en="A worked example: entering weights on a tablet">實例：在地磅邊用平板輸入</h2>
+      <p data-en="When we replaced Chang-Fu Rice Drying Center's paper weighing process, the hard part was not the database. It was that the person entering the data is standing next to a truck, outdoors, in daylight, possibly wearing gloves, with a queue behind them.">我們把長富稻穀乾燥中心的紙本過磅流程換成系統時，難的部分不是資料庫。難的是輸入資料的那個人，站在卡車旁邊、在戶外、在大太陽下、可能戴著手套，而且後面還有人在排隊。</p>
+      <p data-en="That situation dictates the interface: large touch targets, a short path from opening the app to a saved record, values that are hard to mis-tap, and legibility in glare. None of those are aesthetic decisions — they come straight from where the screen is used.">這個情境直接決定了介面：大的觸控目標、從打開到存檔的路徑要短、數值要不容易按錯、在強光下要看得清楚。這些沒有一項是美感決定——它們全部直接來自這個畫面被使用的地點。</p>
+      <p data-en-html="The system side of that project is described on the <a href=&quot;/en/services/erp/&quot;>ERP system development</a> page.">那個專案的系統面寫在 <a href="/services/erp/">ERP 系統開發</a>頁。</p>
+
+      <h2 id="scope" data-en="What a project usually covers">一個專案通常包含什麼</h2>
+      <ul>
+        <li data-en="Watching the work happen, and talking to the people who will actually use it">實地看工作怎麼進行，並和真正要使用它的人談過</li>
+        <li data-en="Flow and information structure before any visual decisions">在任何視覺決定之前，先確定流程與資訊結構</li>
+        <li data-en="Wireframes, then a clickable prototype to test the flow with real users">線框稿，接著做可點擊原型，讓真實使用者測試流程</li>
+        <li data-en="High-fidelity interface design, inheriting from your brand identity">高保真介面設計，並繼承你的品牌識別</li>
+        <li data-en="A component library and state definitions the engineers build from">工程師據以開發的元件庫與狀態定義</li>
+        <li data-en="Accessibility basics: contrast, touch target sizes, keyboard and screen-reader support">無障礙基本功：對比度、觸控目標大小、鍵盤與螢幕閱讀器支援</li>
+      </ul>
+
+      <h2 id="fit" data-en="Who this is a good fit for">什麼情況適合找我們</h2>
+      <p data-en="Teams with a screen that is either used constantly by staff or relied on to convert customers — and where somebody already suspects it is costing more than it should. If you can name the screen people complain about, that is usually the place to start.">有一個畫面被員工高頻率使用，或被用來說服客戶轉換，而且已經有人隱約覺得它的代價超出應有的團隊。如果你講得出哪個畫面大家在抱怨，那通常就是該從那裡開始。</p>
+      <p data-en="If your product has no users yet, formal user research is premature — build the thing and put it in front of someone. We would rather say that than bill you for research with nobody to research.">如果你的產品還沒有使用者，正式的使用者研究就太早了——先做出來，拿給人用。我們寧願這樣說，也不想在沒有對象可研究的情況下向你收研究費。</p>
+      <p data-en-html="Interface work inherits from identity, so if the visual language is not settled yet, the two are usually done together — see <a href=&quot;/en/services/identity/&quot;>brand identity design</a>.">介面設計繼承自識別，所以如果視覺語言還沒定下來，這兩件事通常會一起做——見<a href="/services/identity/">品牌識別設計</a>。</p>
+
+    </article>
+
+    <section class="subpage__cta">
+      <p data-en="Which screen do your people complain about most?">你的團隊最常抱怨哪一個畫面？</p>
+      <a href="/#contact" class="btn btn--solid" data-hover><span data-en="Free Consult">免費諮詢</span></a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__left">
+      <span class="footer__logo">杰辰資訊 Jetron</span>
+      <span class="footer__tag">Digital &times; Physical Brand Experience</span>
+    </div>
+    <div class="footer__right">
+      <a href="/#services" data-hover data-en="Services">服務項目</a>
+      <a href="/#identity" data-hover data-en="Identity">品牌統籌</a>
+      <a href="/#contact" data-hover data-en="Contact">聯絡我們</a>
+    </div>
+    <div class="footer__base">
+      <span>© 2026 杰辰資訊 Jetron Information</span>
+      <span>Designed &amp; built in Taiwan</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="/js/main.js?v=20260812"></script>
+</body>
+</html>
