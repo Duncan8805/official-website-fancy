@@ -3,41 +3,59 @@
    ═══════════════════════════════════════════ */
 
 /* ═══════════ SELF-HOSTED FONTS ═══════════
-   Subset + variable (wght 300–600 only, the range this stylesheet uses).
-   Replaces the Google Fonts <link>, which was 272 KB of render-blocking CSS
-   pulling 34 woff2 files / 2.46 MB. Regenerate with:  python tools/build-fonts.py
+   Subset + variable (wght 300–600 only, the range this stylesheet uses),
+   split by unicode-range so the browser fetches each CJK block only when a
+   glyph in it renders. Only the small Latin+punctuation slices are preloaded
+   (see the <link rel=preload> tags in each page head); the CJK slices stream
+   in during the preloader window. Regenerate with: python tools/build-fonts.py
+   The unicode-range values below are static — they never change unless a glyph
+   outside the declared ranges is used (which would tofu until you rebuild).
    ═════════════════════════════════════════ */
 @font-face {
   font-family: "Noto Sans TC";
-  src: url("../assets/fonts/noto-sans-tc.woff2?v=20260812") format("woff2-variations"),
-       url("../assets/fonts/noto-sans-tc.woff2?v=20260812") format("woff2");
-  font-weight: 300 600;
-  font-style: normal;
-  font-display: swap;
+  src: url("../assets/fonts/noto-sans-tc-latin.woff2?v=20260813") format("woff2");
+  font-weight: 300 600; font-style: normal; font-display: swap;
+  unicode-range: U+0-FF, U+131, U+152-153, U+2000-206F, U+2074, U+20AC, U+2113, U+2190-21FF, U+2212, U+2215, U+2500-257F, U+25CA, U+3000-303F, U+FE30-FE4F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("../assets/fonts/noto-sans-tc-cjk-a.woff2?v=20260813") format("woff2");
+  font-weight: 300 600; font-style: normal; font-display: swap;
+  unicode-range: U+3400-4DBF, U+4E00-6FFF;
+}
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("../assets/fonts/noto-sans-tc-cjk-b.woff2?v=20260813") format("woff2");
+  font-weight: 300 600; font-style: normal; font-display: swap;
+  unicode-range: U+7000-9FFF, U+F900-FAFF;
 }
 @font-face {
   font-family: "Noto Serif TC";
-  src: url("../assets/fonts/noto-serif-tc.woff2?v=20260812") format("woff2-variations"),
-       url("../assets/fonts/noto-serif-tc.woff2?v=20260812") format("woff2");
-  font-weight: 300 600;
-  font-style: normal;
-  font-display: swap;
+  src: url("../assets/fonts/noto-serif-tc-latin.woff2?v=20260813") format("woff2");
+  font-weight: 300 600; font-style: normal; font-display: swap;
+  unicode-range: U+0-FF, U+131, U+152-153, U+2000-206F, U+2074, U+20AC, U+2113, U+2190-21FF, U+2212, U+2215, U+2500-257F, U+25CA, U+3000-303F, U+FE30-FE4F, U+FF00-FFEF;
+}
+@font-face {
+  font-family: "Noto Serif TC";
+  src: url("../assets/fonts/noto-serif-tc-cjk-a.woff2?v=20260813") format("woff2");
+  font-weight: 300 600; font-style: normal; font-display: swap;
+  unicode-range: U+3400-4DBF, U+4E00-6FFF;
+}
+@font-face {
+  font-family: "Noto Serif TC";
+  src: url("../assets/fonts/noto-serif-tc-cjk-b.woff2?v=20260813") format("woff2");
+  font-weight: 300 600; font-style: normal; font-display: swap;
+  unicode-range: U+7000-9FFF, U+F900-FAFF;
 }
 @font-face {
   font-family: "Fraunces";
-  src: url("../assets/fonts/fraunces.woff2?v=20260812") format("woff2-variations"),
-       url("../assets/fonts/fraunces.woff2?v=20260812") format("woff2");
-  font-weight: 300 600;
-  font-style: normal;
-  font-display: swap;
+  src: url("../assets/fonts/fraunces.woff2?v=20260813") format("woff2");
+  font-weight: 300 600; font-style: normal; font-display: swap;
 }
 @font-face {
   font-family: "Fraunces";
-  src: url("../assets/fonts/fraunces-italic.woff2?v=20260812") format("woff2-variations"),
-       url("../assets/fonts/fraunces-italic.woff2?v=20260812") format("woff2");
-  font-weight: 300 600;
-  font-style: italic;
-  font-display: swap;
+  src: url("../assets/fonts/fraunces-italic.woff2?v=20260813") format("woff2");
+  font-weight: 300 600; font-style: italic; font-display: swap;
 }
 
 :root {

@@ -70,11 +70,12 @@
 }</script>
 
   <!-- Self-hosted subset fonts (see tools/build-fonts.py). Preload only the
-       three faces that render above the fold; the italic loads on demand. -->
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-sans-tc.woff2?v=20260812" crossorigin="">
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-serif-tc.woff2?v=20260812" crossorigin="">
-  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/fraunces.woff2?v=20260812" crossorigin="">
-  <link rel="stylesheet" href="/css/style.css?v=20260812">
+       small Latin+punctuation slices + Fraunces; the CJK slices stream in on
+       demand via unicode-range during the preloader window. -->
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-sans-tc-latin.woff2?v=20260813" crossorigin="">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/noto-serif-tc-latin.woff2?v=20260813" crossorigin="">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/fraunces.woff2?v=20260813" crossorigin="">
+  <link rel="stylesheet" href="/css/style.css?v=20260813">
 </head>
 <body>
 

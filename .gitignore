@@ -5,3 +5,7 @@ node_modules/
 # Upstream variable-font sources downloaded by tools/build-fonts.py (~29 MB).
 # Only the subset woff2 files in assets/fonts/ are committed.
 tools/.fontcache/
+
+# Python bytecode from tools/
+__pycache__/
+*.pyc

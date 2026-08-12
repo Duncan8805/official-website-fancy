@@ -32,13 +32,41 @@ CACHE = os.path.join(ROOT, "tools", ".fontcache")
 BASE = "https://raw.githubusercontent.com/google/fonts/main/ofl"
 
 FAMILIES = [
-    # (output name, source url, wght range kept)
-    ("noto-sans-tc", f"{BASE}/notosanstc/NotoSansTC%5Bwght%5D.ttf", (300, 600)),
-    ("noto-serif-tc", f"{BASE}/notoseriftc/NotoSerifTC%5Bwght%5D.ttf", (300, 600)),
-    ("fraunces", f"{BASE}/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf", (300, 600)),
+    # (output name, source url, wght range kept, is_cjk)
+    ("noto-sans-tc", f"{BASE}/notosanstc/NotoSansTC%5Bwght%5D.ttf", (300, 600), True),
+    ("noto-serif-tc", f"{BASE}/notoseriftc/NotoSerifTC%5Bwght%5D.ttf", (300, 600), True),
+    ("fraunces", f"{BASE}/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf", (300, 600), False),
     ("fraunces-italic",
-     f"{BASE}/fraunces/Fraunces-Italic%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf", (300, 600)),
+     f"{BASE}/fraunces/Fraunces-Italic%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf", (300, 600), False),
 ]
+
+# unicode-range slices. The big CJK families are split so the browser fetches
+# each disjoint range only when a glyph in it is rendered, and so the tiny
+# Latin+punctuation slice (used in every heading) can be preloaded on its own
+# instead of dragging the whole ~500 KB CJK payload onto the critical path.
+# ranges: list of (lo, hi) inclusive, used both to subset and as the CSS
+# unicode-range descriptor. Slices must be disjoint within a family.
+LATIN_RANGES = [
+    (0x00, 0xFF), (0x131, 0x131), (0x152, 0x153), (0x2000, 0x206F),
+    (0x2074, 0x2074), (0x20AC, 0x20AC), (0x2113, 0x2113), (0x2190, 0x21FF),
+    (0x2212, 0x2212), (0x2215, 0x2215), (0x2500, 0x257F), (0x25CA, 0x25CA),
+    (0x3000, 0x303F), (0xFE30, 0xFE4F), (0xFF00, 0xFFEF),
+]
+CJK_A_RANGES = [(0x3400, 0x4DBF), (0x4E00, 0x6FFF)]
+CJK_B_RANGES = [(0x7000, 0x9FFF), (0xF900, 0xFAFF)]
+
+# (suffix, ranges) — CJK families emit all three, Latin families only "latin".
+CJK_SLICES = [("latin", LATIN_RANGES), ("cjk-a", CJK_A_RANGES), ("cjk-b", CJK_B_RANGES)]
+LATIN_SLICES = [("", LATIN_RANGES + CJK_A_RANGES + CJK_B_RANGES)]  # single file, keeps name
+
+
+def in_ranges(cp: int, ranges) -> bool:
+    return any(lo <= cp <= hi for lo, hi in ranges)
+
+
+def css_unicode_range(ranges) -> str:
+    parts = [f"U+{lo:X}" if lo == hi else f"U+{lo:X}-{hi:X}" for lo, hi in ranges]
+    return ", ".join(parts)
 
 # Always included regardless of current copy, so small edits don't cause tofu.
 SAFETY = (
@@ -79,7 +107,11 @@ def fetch(url: str, dest: str) -> str:
     return dest
 
 
-def build(name: str, url: str, wght, text: str) -> None:
+def build_slice(name: str, suffix: str, url: str, wght, text: str) -> int:
+    """Subset one family to `text`, saving <name>[-<suffix>].woff2.
+    Returns bytes written, or 0 if the slice had no glyphs to keep."""
+    if not text:
+        return 0
     src = fetch(url, os.path.join(CACHE, name + ".ttf"))
     # lazy=False: the lazy gvar proxy raises KeyError during subsetting once
     # instancer has rewritten the table (fontTools lazyTools), so load eagerly.
@@ -115,20 +147,31 @@ def build(name: str, url: str, wght, text: str) -> None:
         font = instancer.instantiateVariableFont(font, limits, updateFontNames=False)
 
     os.makedirs(OUT, exist_ok=True)
-    dest = os.path.join(OUT, f"{name}.woff2")
+    fname = f"{name}-{suffix}.woff2" if suffix else f"{name}.woff2"
+    dest = os.path.join(OUT, fname)
     font.flavorData = None
     font.save(dest)
     font.close()
-    print(f"  {name}.woff2  {os.path.getsize(dest):>8,} bytes")
+    size = os.path.getsize(dest)
+    print(f"  {fname:26} {size:>8,} bytes")
+    return size
+
+
+def build(name: str, url: str, wght, is_cjk: bool, used: set) -> None:
+    slices = CJK_SLICES if is_cjk else LATIN_SLICES
+    for suffix, ranges in slices:
+        text = "".join(sorted(c for c in used if in_ranges(ord(c), ranges)))
+        build_slice(name, suffix, url, wght, text)
 
 
 def main() -> int:
-    text = "".join(sorted(used_characters()))
-    cjk = sum(1 for c in text if ord(c) > 0x2E7F)
-    print(f"glyph set: {len(text)} characters ({cjk} CJK)")
-    for name, url, wght in FAMILIES:
-        build(name, url, wght, text)
-    print("\nDone. Remember to bump the ?v= cache-buster in css/style.css.")
+    used = used_characters()
+    cjk = sum(1 for c in used if ord(c) > 0x2E7F)
+    print(f"glyph set: {len(used)} characters ({cjk} CJK)\n")
+    for name, url, wght, is_cjk in FAMILIES:
+        build(name, url, wght, is_cjk, used)
+    print("\nDone. @font-face unicode-range in css/style.css is static — no edit")
+    print("needed unless you add a glyph outside the declared slice ranges.")
     return 0
 
 
